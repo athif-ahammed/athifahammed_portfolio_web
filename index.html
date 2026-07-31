@@ -13,8 +13,6 @@
 </head>
 <body>
 
-<div class="scrubber-top" aria-hidden="true"></div>
-
 <header class="site-header">
   <div class="container header-row">
     <a href="./" class="logo"><img src="assets/logo.svg" alt="Athif Ahammed" class="logo-img"></a>
@@ -26,7 +24,7 @@
       <a href="service.html">Service</a>
     </nav>
 
-    <a href="#start" class="btn btn-ghost header-cta">Start a project</a>
+    <a href="#start" class="btn btn-primary header-cta">Start a project</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
@@ -37,50 +35,69 @@
 
   <!-- HERO -->
   <section class="hero" id="landing-page">
-    <div class="hero-bg">
-      <img src="https://framerusercontent.com/images/3LTl5EH03gux1G46BtGN7RSE.jpg?width=1920&height=1080" alt="" />
-      <div class="hero-scrim"></div>
-    </div>
-
     <div class="container hero-grid">
-      <div class="timecode" id="timecode">00:00:00:00</div>
+      <div class="hero-copy">
+        <p class="eyebrow">Video Editing — Motion Graphics — Design</p>
+        <h1 class="hero-title">Bringing ideas to life through <span class="text-gradient">motion</span></h1>
+        <p class="hero-sub">Professional video editing and motion graphics design for brands that want to stand out.</p>
 
-      <p class="eyebrow">Video Editing — Motion Graphics — Design</p>
-      <h1 class="hero-title">Bringing Ideas to Life<br>Through <span class="accent">Motion</span></h1>
-      <p class="hero-sub">Professional video editing and motion graphics design for brands that want to stand out.</p>
-
-      <div class="hero-actions">
-        <a href="service.html" class="btn btn-gradient">View Services</a>
-        <a href="portfolio.html" class="btn btn-outline">View Portfolio</a>
+        <div class="hero-actions">
+          <a href="service.html" class="btn btn-gradient">View Services</a>
+          <a href="portfolio.html" class="btn btn-outline">View Portfolio</a>
+        </div>
       </div>
-    </div>
 
-    <div class="hero-track" aria-hidden="true">
-      <div class="tick-row"></div>
+      <div class="hero-visual reveal">
+        <div class="hero-blob" aria-hidden="true"></div>
+        <div class="hero-frame">
+          <img src="https://framerusercontent.com/images/3LTl5EH03gux1G46BtGN7RSE.jpg?width=1200&height=1500" alt="Athif Ahammed editing">
+        </div>
+        <div class="stat-chip">
+          <span class="stat-chip-dot" aria-hidden="true"></span>
+          <div>
+            <strong>65+</strong>
+            <span>Projects delivered</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- WHAT I DO -->
-  <section class="section light-section" id="what-i-do">
+  <section class="section" id="what-i-do">
     <div class="container">
-      <p class="section-eyebrow">01 — What I Do</p>
-      <h2 class="section-title">A quick look at the services I offer<br>and the value I bring.</h2>
+      <div class="section-head-row reveal">
+        <div>
+          <p class="section-eyebrow">What I Do</p>
+          <h2 class="section-title">Services built to move your brand</h2>
+        </div>
+        <a href="service.html" class="btn btn-outline">Explore All Services</a>
+      </div>
 
       <div class="services-grid reveal">
         <article class="service-card">
-          <span class="service-index">V.E</span>
+          <span class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z" stroke="currentColor" stroke-width="1.8"/><path d="m16 10 4-2.5v9L16 14" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </span>
           <h3>Video Editing</h3>
           <p>I create edits that grab attention, spark emotion, and tell stories — crafted with purpose for brands, ads, and creators.</p>
+          <a href="service.html" class="service-link">Learn more →</a>
         </article>
         <article class="service-card">
-          <span class="service-index">G.D</span>
+          <span class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="3.2" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-3.3 2.7-5.5 6-5.5M14.5 5.5 18 4l-1.5 3.5L18 11l-3.5-1.5L11 11l1.5-3.5L11 4l3.5 1.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </span>
           <h3>Graphic Design</h3>
-          <p>I design clean, purposeful visuals for social, thumbnails, and brand assets — backed by expertise in print design to support every project.</p>
+          <p>I design clean, purposeful visuals for social, thumbnails, and brand assets — backed by expertise in print design.</p>
+          <a href="service.html" class="service-link">Learn more →</a>
         </article>
         <article class="service-card">
-          <span class="service-index">M.G</span>
+          <span class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 1 1 8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M4 12v5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
           <h3>Motion Graphics</h3>
           <p>I craft motion graphics that elevate brands and bring visuals to life — ideal for promos, intros, and ads.</p>
+          <a href="service.html" class="service-link">Learn more →</a>
         </article>
       </div>
 
@@ -102,11 +119,11 @@
         <img src="https://i.ytimg.com/vi_webp/7jR88qjhFmQ/maxresdefault.webp" alt="Athif Ahammed at work">
       </div>
       <div class="who-content">
-        <p class="section-eyebrow">02 — Who I Am</p>
+        <p class="section-eyebrow">Who I Am</p>
         <h2 class="section-title">Hi, I'm Athif Ahammed.</h2>
         <p class="body-text">I am a passionate Video Editor and Motion Graphic Designer, dedicated to creating visually engaging and impactful content. My expertise lies in crafting professional edits that combine storytelling with dynamic visuals.</p>
 
-        <div class="stats-row">
+        <div class="stats-strip">
           <div class="stat"><span class="stat-num">30+</span><span class="stat-label">Clients</span></div>
           <div class="stat"><span class="stat-num">65+</span><span class="stat-label">Successful Projects</span></div>
           <div class="stat"><span class="stat-num">70+</span><span class="stat-label">Projects</span></div>
@@ -121,7 +138,7 @@
   </section>
 
   <!-- CLIENTS -->
-  <section class="section clients-section light-section">
+  <section class="section clients-section">
     <div class="container reveal">
       <p class="section-eyebrow center">Clients I've Worked With</p>
       <h2 class="section-title center small">Trusted by brands and businesses to deliver exceptional visual content.</h2>
@@ -140,8 +157,8 @@
     <div class="container">
       <div class="section-head-row reveal">
         <div>
-          <p class="section-eyebrow">03 — Featured Projects</p>
-          <h2 class="section-title">A selection of my best work across<br>video editing, motion graphics, and design.</h2>
+          <p class="section-eyebrow">Featured Projects</p>
+          <h2 class="section-title">A selection of my best work across video, motion, and design.</h2>
         </div>
         <a href="portfolio.html" class="btn btn-outline">View All Projects</a>
       </div>
@@ -168,35 +185,36 @@
   </section>
 
   <!-- CTA -->
-  <section class="section cta-section light-section" id="start">
+  <section class="section cta-section" id="start">
     <div class="container reveal">
       <div class="cta-box">
-        <p class="section-eyebrow center" style="color: var(--brand-mint);">Let's Work Together</p>
+        <p class="eyebrow">Let's Work Together</p>
         <h2 class="cta-title">Ready to bring your vision to life?</h2>
         <p class="cta-sub">Let's collaborate to create stunning visual content that captivates your audience.</p>
-        <a href="mailto:info.athifahammed@gmail.com" class="btn btn-gradient btn-lg">Start A New Project</a>
+        <a href="mailto:info.athifahammed@gmail.com" class="btn btn-invert btn-lg">Start A New Project</a>
       </div>
     </div>
   </section>
 
   <!-- NEWSLETTER -->
   <section class="section newsletter-section">
-    <div class="container newsletter-row reveal">
-      <div>
-        <p class="newsletter-eyebrow">Stay inspired</p>
-        <p class="newsletter-copy">Get creative tips, project updates, and exclusive resources — straight to your inbox.</p>
+    <div class="container reveal">
+      <div class="newsletter-row">
+        <div>
+          <p class="section-eyebrow" style="margin-bottom:6px;">Stay Inspired</p>
+          <p class="newsletter-copy">Get creative tips, project updates, and exclusive resources — straight to your inbox.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" aria-label="Subscribe">→</button>
+        </form>
       </div>
-      <form class="newsletter-form" onsubmit="return false;">
-        <input type="email" placeholder="Your email address" required>
-        <button type="submit" aria-label="Subscribe">→</button>
-      </form>
     </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <div class="scrubber-top" aria-hidden="true"></div>
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="./" class="logo"><img src="assets/logo.svg" alt="Athif Ahammed" class="logo-img"></a>
