@@ -663,40 +663,41 @@ main > section:nth-of-type(even){ background: var(--band); }
 }
 
 /* ==============================================
-   Standard Project Card Animation (Non-Flip)
+   Standard Project Card Animation (Non-Flip) - PORTFOLIO PAGE ONLY
    ============================================== */
-.project-card {
+/* Using direct child selector (>) so it only affects Portfolio page, not Home page */
+.projects-grid > .project-card {
   position: relative;
-  /* Add float animation directly to the card */
   animation: cardFloat 5s ease-in-out infinite;
   display: block;
+  aspect-ratio: 4/5; /* Keeps the cards in the exact same beautiful shape as the home page */
 }
 
-/* Add wave staggered effect to the non-flip cards */
-.project-card:nth-child(1) { animation-delay: 0s; }
-.project-card:nth-child(2) { animation-delay: 1.2s; }
-.project-card:nth-child(3) { animation-delay: 2.4s; }
-.project-card:nth-child(4) { animation-delay: 3.6s; }
-.project-card:nth-child(5) { animation-delay: 4.8s; }
-.project-card:nth-child(6) { animation-delay: 6s; }
+/* Add wave staggered effect */
+.projects-grid > .project-card:nth-child(1) { animation-delay: 0s; }
+.projects-grid > .project-card:nth-child(2) { animation-delay: 1.2s; }
+.projects-grid > .project-card:nth-child(3) { animation-delay: 2.4s; }
+.projects-grid > .project-card:nth-child(4) { animation-delay: 3.6s; }
+.projects-grid > .project-card:nth-child(5) { animation-delay: 4.8s; }
+.projects-grid > .project-card:nth-child(6) { animation-delay: 6s; }
 
-/* Pause hover and apply glow directly to the standard card */
-.project-card:hover {
+/* Pause hover and apply glow */
+.projects-grid > .project-card:hover {
   animation-play-state: paused;
   transform: translateY(-10px);
   box-shadow: 0 16px 32px -10px rgba(0, 222, 132, 0.25);
   border-color: rgba(0, 222, 132, 0.4);
 }
-.project-card:hover::after {
+.projects-grid > .project-card:hover::after {
   opacity: 1;
 }
-.project-card:hover img {
+.projects-grid > .project-card:hover img {
   transform: scale(1.08);
 }
-.project-card:hover .project-info {
+.projects-grid > .project-card:hover .project-info {
   transform: translateY(0);
 }
-.project-card:hover .project-category {
+.projects-grid > .project-card:hover .project-category {
   background: var(--c-mint);
   color: var(--c-dark);
   border-color: var(--c-mint);
