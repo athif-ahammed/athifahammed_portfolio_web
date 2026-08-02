@@ -199,3 +199,60 @@ if (motionTabs.length > 0) {
     });
   });
 }
+// ==========================================
+// Newsletter Functionality (Live Email Setup)
+// ==========================================
+const newsletterForm = document.querySelector('.newsletter-form');
+const emailInput = document.querySelector('.newsletter-form input[type="email"]');
+const submitBtn = document.querySelector('.newsletter-form button[type="submit"]');
+
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // Page reload off korbe
+    
+    const emailValue = emailInput.value.trim();
+    
+    // Strict Regex: Fake ba bhul email block korbe
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    
+    if (!emailPattern.test(emailValue)) {
+      alert("Please enter a valid email address."); 
+      return;
+    }
+    
+    // Button state loading e nibe
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.innerHTML = "..."; 
+    submitBtn.disabled = true;
+
+    // Direct apnar email e data pathabe
+    fetch("https://formsubmit.co/ajax/athif5659@gmail.com", {
+      method: "POST",
+      headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+          _subject: "New Newsletter Subscriber!",
+          email: emailValue
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Success mark dekhabe
+      submitBtn.innerHTML = "✓"; 
+      emailInput.value = ""; 
+      
+      // 3 second por ager obosthay ferot jabe
+      setTimeout(() => {
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+      }, 3000);
+    })
+    .catch(error => {
+      alert("Something went wrong. Please try again.");
+      submitBtn.innerHTML = originalBtnText;
+      submitBtn.disabled = false;
+    });
+  });
+}
