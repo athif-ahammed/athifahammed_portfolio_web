@@ -703,3 +703,77 @@ main > section:nth-of-type(even){ background: var(--band); }
   border-color: var(--c-mint);
   box-shadow: 0 4px 12px rgba(0, 222, 132, 0.3);
 }
+/* ==============================================
+   Lightbox Modal (Popup)
+   ============================================== */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 17, 18, 0.95); /* Apnar dark theme er sathe match kora */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.lightbox-modal.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.lightbox-modal.is-active .lightbox-content {
+  transform: scale(1);
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  object-fit: contain;
+}
+
+#lightboxCaption {
+  color: var(--c-light);
+  font-family: var(--font-display);
+  font-size: 24px;
+  margin-top: 16px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: rgba(240, 246, 246, 0.1);
+  color: var(--c-light);
+  border: none;
+  font-size: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  z-index: 10000;
+}
+
+.lightbox-close:hover {
+  background: var(--c-mint);
+  color: var(--c-dark);
+}

@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
   <defs>
-    <linearGradient id="brandGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#01624c"/>
-      <stop offset="55%" stop-color="#2ac094"/>
-      <stop offset="100%" stop-color="#00de84"/>
-    </linearGradient>
+    <style>
+      .cls-1 {
+        fill: #eff5f5;
+      }
+
+      .cls-2 {
+        fill: #02191a;
+      }
+    </style>
   </defs>
+  <rect class="cls-1" width="1080" height="1080" rx="150.67" ry="150.67"/>
   <g>
-    <path fill="url(#brandGrad)" d="M290.94,739.98H51.21l391.69-374.1c47.16-45.04,109.86-70.18,175.08-70.18h239.73l-391.69,374.1c-47.16,45.04-109.86,70.18-175.08,70.18Z"/>
-    <path fill="url(#brandGrad)" d="M907.16,743.74h-253.49c0-140,113.49-253.49,253.49-253.49h0v253.49Z"/>
+    <path class="cls-2" d="M299.43,730.04H70.52l374.01-357.22c45.03-43.01,104.91-67.01,167.18-67.01h228.91l-374.01,357.22c-45.03,43.01-104.91,67.01-167.18,67.01Z"/>
+    <path class="cls-2" d="M887.84,733.63h-242.05c0-133.68,108.37-242.05,242.05-242.05h0v242.05Z"/>
   </g>
 </svg>
