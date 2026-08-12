@@ -804,3 +804,46 @@ main > section:not(:first-child) {
 main > section:nth-child(2) {
   box-shadow: none; 
 }
+/* ==============================================
+   Portfolio Hero Background Marquee
+   ============================================== */
+.portfolio-hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden; /* Eita shudhu background-ke clip korbe, apnar sticky section vangbe na */
+  z-index: 0;
+}
+
+.portfolio-hero-bg::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  
+  /* === Temporary Gradient (Jate ekhoni effect ta dekhte pan) === */
+  background-image: url('assets/portfolio-collage.jpg');
+  
+  /* 🛑 Jokhon apnar Collage Chobi toiri hoye jabe, tokhon uporer background kete nicher line-ta use korben: */
+  /* background-image: url('assets/portfolio-collage.jpg'); */
+  
+  background-size: 2000px 100%; 
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  
+  filter: blur(2px); 
+  opacity: 0.5; /* Ektu bariye diyechi jate clear bujha jay */
+  
+  /* Animation loop */
+  animation: scrollPortfolioBg 30s linear infinite;
+}
+
+@keyframes scrollPortfolioBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -2000px 0; 
+  }
+}

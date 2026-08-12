@@ -53,6 +53,7 @@ const countIo = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.4 });
 countEls.forEach(el => countIo.observe(el));
+
 // Auto-flip individual Featured Projects every 10 seconds with a wave effect
 const flippers = document.querySelectorAll('.project-flip-inner');
 if (flippers.length > 0) {
@@ -64,6 +65,7 @@ if (flippers.length > 0) {
     });
   }, 5000); // 10000 ms = 10 seconds
 }
+
 // ==========================================
 // Portfolio Tab Filtering Logic
 // ==========================================
@@ -98,6 +100,7 @@ if (videoTabs.length > 0) {
     });
   });
 }
+
 // ==========================================
 // Portfolio Advanced Lightbox Modal Logic
 // ==========================================
@@ -126,16 +129,20 @@ if (lightboxModal) {
       lightboxVideo.style.display = 'none';
       lightboxIframe.style.display = 'none';
       lightboxVideo.pause();
+      lightboxVideo.src = ''; 
       lightboxIframe.src = '';
       
       // Show appropriate media based on type
-      if (mediaType === 'video') {
+    if (mediaType === 'video') {
         lightboxVideo.style.display = 'block';
         lightboxVideo.src = mediaUrl;
-        lightboxVideo.play(); // Auto-play video
+        lightboxVideo.play(); 
       } else if (mediaType === 'iframe') {
         lightboxIframe.style.display = 'block';
         lightboxIframe.src = mediaUrl;
+      } else if (mediaType === 'pdf') {
+        lightboxIframe.style.display = 'block';
+        lightboxIframe.src = mediaUrl + "#toolbar=0&navpanes=0";
       } else {
         lightboxImg.style.display = 'block';
         lightboxImg.src = mediaUrl;
@@ -166,6 +173,7 @@ if (lightboxModal) {
     if (e.key === 'Escape' && lightboxModal.classList.contains('is-active')) closeModal();
   });
 }
+
 // ==========================================
 // Motion Graphics Tab Filtering Logic
 // ==========================================
@@ -199,6 +207,40 @@ if (motionTabs.length > 0) {
     });
   });
 }
+// ==========================================
+// Graphic Design Tab Filtering Logic
+// ==========================================
+const graphicTabs = document.querySelectorAll('#graphic-tabs .tab-btn');
+const graphicCards = document.querySelectorAll('#graphic-grid .graphic-card');
+
+if (graphicTabs.length > 0) {
+  graphicTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active class from all graphic tabs
+      graphicTabs.forEach(t => t.classList.remove('active'));
+      
+      // Add active class to clicked tab
+      tab.classList.add('active');
+
+      const filterValue = tab.getAttribute('data-filter');
+
+      // Show/Hide cards
+      graphicCards.forEach(card => {
+        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+          card.style.display = 'block'; 
+          
+          // Restart floating animation
+          card.style.animation = 'none';
+          card.offsetHeight; 
+          card.style.animation = null; 
+        } else {
+          card.style.display = 'none'; 
+        }
+      });
+    });
+  });
+}
+
 // ==========================================
 // Newsletter Functionality (Live Email Setup)
 // ==========================================

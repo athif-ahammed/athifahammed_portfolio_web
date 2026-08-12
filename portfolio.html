@@ -27,12 +27,18 @@
 <main>
 
   <!-- Portfolio Hero -->
-  <section class="section" style="padding: 140px 0 80px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-    <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+  <section class="section" id="portfolio-hero" style="padding: 90px 0 130px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    
+    <!-- Scrolling Background Container -->
+    <div class="portfolio-hero-bg"></div>
+
+    <!-- Content Container -->
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2;">
       <p class="eyebrow reveal" style="margin-bottom: 8px;">My Work</p>
       <h1 class="section-title reveal" style="font-size: clamp(40px, 6vw, 64px); color: var(--c-light); max-width: 100%; margin-bottom: 20px;">Portfolio</h1>
       <p class="body-text reveal" style="max-width: 600px; margin: 0 auto; text-align: center; font-size: 18px; line-height: 1.6;">A collection of my best work across Video Editing, Motion Graphics, and Graphic Design.</p>
     </div>
+    
   </section>
 
 
@@ -53,36 +59,40 @@
       <!-- Normal Grid (No Flip) -->
       <div class="projects-grid reveal" id="video-grid">
         
-        <!-- Project 1 (Direct MP4 Video Example) -->
+        <!-- Project 1 Resort Overview -->
         <a class="project-card video-card" href="#" data-category="commercials" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/video.1.mp4" type="video/mp4">
           <img src="assets/waveresort.jpg" alt="Brand Commercial">
           <div class="project-info">
+            <h6>The Wave Resort LTD</h6>
             <h3 class="project-title">Resort Overview Video</h3>
             <span class="project-category">Commercials</span>
           </div>
         </a>
 
-        <!-- Project 2 (YouTube Link Example) -->
+        <!-- Project 2 Real Estate -->
         <a class="project-card video-card" href="#" data-category="commercials" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/video.2.mp4">
           <img src="assets/dmpc.jpg" alt="Corporate Promo">
           <div class="project-info">
+            <h6>Faith Properties</h6>
             <h3 class="project-title">Real Estate Promo</h3>
             <span class="project-category">Commercials</span>
           </div>
         </a>
 
-        <!-- Project 3 (High-Res Image Example) -->
+        <!-- Project 3 British Lubricant -->
         <a class="project-card video-card" href="#" data-category="ecommerce" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/blvideo.mp4">
           <img src="assets/british.jpg" alt="Event Highlight">
           <div class="project-info">
+            <h6>British Lubricant</h6>
             <h3 class="project-title">Product Promotion</h3>
             <span class="project-category">E-Commerce Ads</span>
           </div>
         </a>
-        <!-- Project 4 (High-Res Image Example) -->
+        <!-- Project 4 Fashion ad -->
         <a class="project-card video-card" href="#" data-category="ecommerce" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/F11Reel.mp4">
           <img src="assets/f11f.jpg" alt="Event Highlight">
           <div class="project-info">
+            <h6>Faith 11</h6>
             <h3 class="project-title">Fashion Ads</h3>
             <span class="project-category">E-Commerec Ads</span>
           </div>
@@ -103,38 +113,123 @@
         <div class="portfolio-tabs" id="motion-tabs">
           <button class="tab-btn active" data-filter="all">All</button>
           <button class="tab-btn" data-filter="logo-animation">Logo Animation</button>
-          <button class="tab-btn" data-filter="typography">Typography</button>
-          <button class="tab-btn" data-filter="product-promo">Product Promo</button>
+          <button class="tab-btn" data-filter="Motion Advertisement">Motion Advertisement</button>
+          <button class="tab-btn" data-filter="Animated Reel">Animated Reel</button>
+          <button class="tab-btn" data-filter="3D Animation">3D Animation</button>
         </div>
       </div>
       
       <!-- Normal Grid (No Flip) -->
       <div class="projects-grid reveal" id="motion-grid">
         
-        <!-- Project 1 (Logo Animation) -->
-        <a class="project-card motion-card" href="#" data-category="logo-animation" data-media-type="video" data-media-url="assets/marzlogoanim.mp4">
+        <!-- Project 1 marz -->
+        <a class="project-card motion-card" href="#" data-category="logo-animation" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/marzlogoanim.mp4">
           <img src="assets/marz.jpg" alt="MARZ Logo Animation">
           <div class="project-info">
+            <h6>MARZ</h6>
             <h3 class="project-title">Brand Reveal</h3>
             <span class="project-category">Logo Animation</span>
           </div>
         </a>
 
-        <!-- Project 2 (Typography) -->
-        <a class="project-card motion-card" href="#" data-category="typography" data-media-type="video" data-media-url="assets/krishan.mp4">
+        <!-- Project 2 krishan -->
+        <a class="project-card motion-card" href="#" data-category="logo-animation" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/krishan.mp4">
           <img src="assets/krishan.jpg" alt="Kriishan Logo Animation">
           <div class="project-info">
+            <h6>Krishan</h6>
             <h3 class="project-title">Brand Reaveal</h3>
             <span class="project-category">Logo Animation</span>
           </div>
         </a>
 
-        <!-- Project 3 (Product Promo) -->
-        <a class="project-card motion-card" href="#" data-category="product-promo" data-media-type="video" data-media-url="assets/product-promo-1.mp4">
-          <img src="assets/project-pic-4-01.jpg" alt="Apparel Promo">
+        <!-- Project 3 Marz -->
+        <a class="project-card motion-card" href="#" data-category="Animated Reel" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/V7.mp4">
+          <img src="assets/m3.jpg" alt="Apparel Promo">
           <div class="project-info">
-            <h3 class="project-title">Apparel Promo</h3>
-            <span class="project-category">Product Promo</span>
+            <h6>MARZ</h6>
+            <h3 class="project-title">Content Slider</h3>
+            <span class="project-category">Animated Reel</span>
+          </div>
+        </a>
+        <!-- Project 4 coca powder -->
+        <a class="project-card motion-card" href="#" data-category="3D Animation" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/V8.mp4">
+          <img src="assets/m4.jpg" alt="Apparel Promo">
+          <div class="project-info">
+            <h6>Personal</h6>
+            <h3 class="project-title">3D Visualization</h3>
+            <span class="project-category">3D Animation</span>
+          </div>
+        </a>
+        <!-- Project 5 Porikkha -->
+        <a class="project-card motion-card" href="#" data-category="Motion Advertisement" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/V10.mp4">
+          <img src="assets/m5.jpg" alt="Apparel Promo">
+          <div class="project-info">
+            <h6>Porikkha App</h6>
+            <h3 class="project-title">App Promotion</h3>
+            <span class="project-category">Motion Advertisement</span>
+          </div>
+        </a>
+        <!-- Project 6 avio -->
+        <a class="project-card motion-card" href="#" data-category="Motion Advertisement" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/V1.mp4">
+          <img src="assets/m6.jpg" alt="Apparel Promo">
+          <div class="project-info">
+            <h6>AVIOTHIQ</h6>
+            <h3 class="project-title">The Classic Fashion Ad</h3>
+            <span class="project-category">Motion Advertisement</span>
+          </div>
+        </a>
+        <!-- Project 7 avio -->
+        <a class="project-card motion-card" href="#" data-category="Motion Advertisement" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/V2.mp4">
+          <img src="assets/m7.jpg" alt="Apparel Promo">
+          <div class="project-info">
+            <h6>AVIOTHIQ</h6>
+            <h3 class="project-title">Minimal Clothing Ad</h3>
+            <span class="project-category">Motion Advertisement</span>
+          </div>
+        </a>
+        <!-- Project 8 avio -->
+        <a class="project-card motion-card" href="#" data-category="Animated Reel" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/V3.mp4">
+          <img src="assets/m8.jpg" alt="Apparel Promo">
+          <div class="project-info">
+            <h6>AVIOTHIQ</h6>
+            <h3 class="project-title">Website Launching</h3>
+            <span class="project-category">Animated Reel</span>
+          </div>
+        </a>
+        <!-- Project 9 avio -->
+        <a class="project-card motion-card" href="#" data-category="Animated Reel" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/V4.mp4">
+          <img src="assets/m9.jpg" alt="Apparel Promo">
+          <div class="project-info">
+            <h6>AVIOTHIQ</h6>
+            <h3 class="project-title">Satisfied Customers</h3>
+            <span class="project-category">Animated Reel</span>
+          </div>
+        </a>
+        <!-- Project 10 avio) -->
+        <a class="project-card motion-card" href="#" data-category="Motion Advertisement" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/V6.mp4">
+          <img src="assets/m10.jpg" alt="Apparel Promo">
+          <div class="project-info">
+            <h6>AVIOTHIQ</h6>
+            <h3 class="project-title">Sleek Fashion Ad</h3>
+            <span class="project-category">Motion Advertisement</span>
+          </div>
+        </a>
+        <!-- Project 11 avio -->
+        <a class="project-card motion-card" href="#" data-category="Motion Advertisement" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/V5.mp4">
+          <img src="assets/m11.jpg" alt="Apparel Promo">
+          <div class="project-info">
+            <h6>AVIOTHIQ</h6>
+            <h3 class="project-title">Minimal Fashion Ad</h3>
+            <span class="project-category">Motion Advertisement</span>
+          </div>
+        </a>
+        <!-- Project 12 avio -->
+        <a class="project-card motion-card" href="#" data-category="Animated Reel" data-media-type="video" data-media-url="https://github.com/athif-ahammed/athifahammed_portfolio_web/releases/download/Portfolio-V1/V9.mp4">
+          <img src="assets/m12.jpg" alt="Apparel Promo">
+          <div class="project-info">
+            <h6>AVIOTHIQ</h6>
+            <h3 class="project-title">Greeting Wish</h3>
+            <span class="project-category">Animated Reel</span>
           </div>
         </a>
 
@@ -147,32 +242,214 @@
     <div class="container">
       <div class="section-head-row reveal" style="align-items: flex-start; flex-direction: column; gap: 16px;">
         <h2 class="section-title">Graphic Design</h2>
+        
         <!-- Graphic Design Categories -->
-        <div class="portfolio-tabs">
-          <button class="tab-btn active">All</button>
-          <button class="tab-btn">Branding</button>
-          <button class="tab-btn">Generative AI Catalogs</button>
-          <button class="tab-btn">Social Media Post</button>
+        <div class="portfolio-tabs" id="graphic-tabs">
+          <button class="tab-btn active" data-filter="all">All</button>
+          <button class="tab-btn" data-filter="Logo-Design">Logo Design</button>
+          <button class="tab-btn" data-filter="Menu-Card">Menu Card</button>
+          <button class="tab-btn" data-filter="Business-Card">Business Card</button>
+          <button class="tab-btn" data-filter="Social-Media-Post">Social Media Post</button>
+          <button class="tab-btn" data-filter="Event-Branding">Event Branding</button>
+          <button class="tab-btn" data-filter="Packaging">Packaging</button>
         </div>
       </div>
       
-      <div class="projects-grid reveal">
-        <!-- Project 1 -->
-        <a class="project-card" href="#">
-          <img src="assets/project-pic-6-01.jpg" alt="Graphic Project 1">
+      <!-- Graphic Grid -->
+      <div class="projects-grid reveal" id="graphic-grid">
+        
+        <!-- Project 1 (Generative AI Catalog) -->
+        <a class="project-card graphic-card" href="#" data-category="Logo-Design" data-media-type="pdf" data-media-url="assets/bcmea.pdf">
+          <img src="assets/g1.jpg" alt="Apparel Lookbook">
           <div class="project-info">
-            <h3 class="project-title">Apparel Lookbook</h3>
-            <span class="project-category">Generative AI Catalogs</span>
+            <h6>BCMEA</h6>
+            <h3 class="project-title">Brand Identity Design</h3>
+            <span class="project-category">Logo Design</span>
           </div>
         </a>
-        <!-- Project 2 -->
-        <a class="project-card" href="#">
-          <img src="assets/project-pic-4-01.jpg" alt="Graphic Project 2">
+
+        <!-- Project 2 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Logo-Design" data-media-type="pdf" data-media-url="assets/aims.pdf">
+          <img src="assets/g2.jpg" alt="Brand Identity">
           <div class="project-info">
-            <h3 class="project-title">Brand Identity</h3>
-            <span class="project-category">Branding</span>
+            <h6>AIMS Smile Project</h6>
+            <h3 class="project-title">Brand Identity Design</h3>
+            <span class="project-category">Logo Design</span>
           </div>
         </a>
+        <!-- Project 3 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Menu-Card" data-media-type="pdf" data-media-url="assets/cafe menu.pdf">
+          <img src="assets/g3.jpg" alt="Brand Identity">
+          <div class="project-info">
+            <h6>The Wave Resort LTD</h6>
+            <h3 class="project-title">Cafe Menu Card</h3>
+            <span class="project-category">Menu Card</span>
+          </div>
+        </a>
+        <!-- Project 4 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Menu-Card" data-media-type="pdf" data-media-url="assets/bangla menu.pdf">
+          <img src="assets/g4.jpg" alt="Brand Identity">
+          <div class="project-info">
+             <h6>The Wave Resort LTD</h6>
+            <h3 class="project-title">Bangla Menu Card</h3>
+            <span class="project-category">Menu Card</span>
+          </div>
+        </a>
+        <!-- Project 5 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Menu-Card" data-media-type="pdf" data-media-url="assets/seafood menu.pdf">
+          <img src="assets/g5.jpg" alt="Brand Identity">
+          <div class="project-info">
+             <h6>The Wave Resort LTD</h6>
+            <h3 class="project-title">Seafood Menu Card</h3>
+            <span class="project-category">Menu Card</span>
+          </div>
+        </a>
+        <!-- Project 6 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Business-Card" data-media-type="pdf" data-media-url="assets/business card impact.pdf">
+          <img src="assets/g6.jpg" alt="Brand Identity">
+          <div class="project-info">
+             <h6>Impact Communications</h6>
+            <h3 class="project-title">The White Identity</h3>
+            <span class="project-category">Business Card</span>
+          </div>
+        </a>
+        <!-- Project 7 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Business-Card" data-media-type="pdf" data-media-url="assets/business card elite.pdf">
+          <img src="assets/g7.jpg" alt="Brand Identity">
+          <div class="project-info">
+             <h6>Elite Artist Management</h6>
+            <h3 class="project-title">The Elite Edition</h3>
+            <span class="project-category">Business Card</span>
+          </div>
+        </a>
+        <!-- Project 8 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Event-Branding" data-media-type="pdf" data-media-url="assets/oppo boishakhi behance.pdf">
+          <img src="assets/g8.jpg" alt="Brand Identity">
+          <div class="project-info">
+             <h6>OPPO Bangladesh</h6>
+            <h3 class="project-title">Pohela Boishakh</h3>
+            <span class="project-category">Event Branding</span>
+          </div>
+        </a>
+         <!-- Project 9 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Event-Branding" data-media-type="pdf" data-media-url="assets/ramadan gate.pdf">
+          <img src="assets/g9.jpg" alt="Brand Identity">
+          <div class="project-info">
+             <h6>Personal</h6>
+            <h3 class="project-title">Ramdan Gate Design</h3>
+            <span class="project-category">Event Branding</span>
+          </div>
+        </a>
+         <!-- Project 10 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Event-Branding" data-media-type="pdf" data-media-url="assets/ramadan mehendi night.pdf">
+          <img src="assets/g10.jpg" alt="Brand Identity">
+          <div class="project-info">
+             <h6>Impact Communications</h6>
+            <h3 class="project-title">Mehendi Night Event</h3>
+            <span class="project-category">Event Branding</span>
+          </div>
+        </a>
+         <!-- Project 11 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Social-Media-Post" data-media-type="pdf" data-media-url="assets/quiet luxury.pdf">
+          <img src="assets/g11.jpg" alt="Brand Identity">
+          <div class="project-info">
+             <h6>AVIOTHIQ</h6>
+            <h3 class="project-title">The Quiet Luxury</h3>
+            <span class="project-category">Social Media Post</span>
+          </div>
+        </a>
+         <!-- Project 12 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Social-Media-Post" data-media-type="pdf" data-media-url="assets/the essentials.pdf">
+          <img src="assets/g12.jpg" alt="Brand Identity">
+          <div class="project-info">
+             <h6>AVIOTHIQ</h6>
+            <h3 class="project-title">The Everyday Essential</h3>
+            <span class="project-category">Social Media Post</span>
+          </div>
+        </a>
+         <!-- Project 13 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Event-Branding" data-media-type="pdf" data-media-url="assets/bengla Blueberry.pdf">
+          <img src="assets/g13.jpg" alt="Brand Identity">
+          <div class="project-info">
+            <h6> hotel Bengal Blueberry</h6>
+            <h3 class="project-title">Ramadan Branding</h3>
+            <span class="project-category">Event Branding</span>
+          </div>
+        </a>
+         <!-- Project 14 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Event-Branding" data-media-type="pdf" data-media-url="assets/radiant.pdf">
+          <img src="assets/g14.jpg" alt="Brand Identity">
+          <div class="project-info">
+            <h6>Radiant Pharmaceuticals Limited</h6>
+            <h3 class="project-title">Vendor Conference</h3>
+            <span class="project-category">Event Branding</span>
+          </div>
+        </a>
+         <!-- Project 15 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Packaging" data-media-type="pdf" data-media-url="assets/coca pow.pdf">
+          <img src="assets/g15.jpg" alt="Brand Identity">
+          <div class="project-info">
+             <h6>Personal</h6>
+            <h3 class="project-title">Cocoa Powder</h3>
+            <span class="project-category">Packaging</span>
+          </div>
+        </a>
+         <!-- Project 16 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Packaging" data-media-type="image" data-media-url="assets/alarid.jpg">
+          <img src="assets/g16.jpg" alt="Brand Identity">
+          <div class="project-info">
+            <h6>Personal</h6>
+            <h3 class="project-title">Alarid Eye Drop</h3>
+            <span class="project-category">Packaging</span>
+          </div>
+        </a>
+        <!-- Project 17 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Packaging" data-media-type="pdf" data-media-url="assets/moxibac.pdf">
+          <img src="assets/g17.jpg" alt="Brand Identity">
+          <div class="project-info">
+            <h6>Personal</h6>
+            <h3 class="project-title">Moxibac Eye Drop</h3>
+            <span class="project-category">Packaging</span>
+          </div>
+        </a>
+        <!-- Project 18 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Event-Branding" data-media-type="pdf" data-media-url="assets/alphanet.pdf">
+          <img src="assets/g18.jpg" alt="Brand Identity">
+          <div class="project-info">
+            <h6>Aplha Net</h6>
+            <h3 class="project-title">Silver Jubilee Event</h3>
+            <span class="project-category">Event Branding</span>
+          </div>
+        </a>
+        <!-- Project 19 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Social-Media-Post" data-media-type="pdf" data-media-url="assets/impact post.pdf">
+          <img src="assets/g19.jpg" alt="Brand Identity">
+          <div class="project-info">
+            <h6>Impact Communications</h6>
+            <h3 class="project-title">The Previous Works</h3>
+            <span class="project-category">Social Media Post</span>
+          </div>
+        </a>
+        <!-- Project 20 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Social-Media-Post" data-media-type="pdf" data-media-url="assets/live wave post.pdf">
+          <img src="assets/g20.jpg" alt="Brand Identity">
+          <div class="project-info">
+            <h6>Live Wave Entertainment</h6>
+            <h3 class="project-title">The Legacy</h3>
+            <span class="project-category">Social Media Post</span>
+          </div>
+        </a>
+        <!-- Project 21 (Branding) -->
+        <a class="project-card graphic-card" href="#" data-category="Social-Media-Post" data-media-type="pdf" data-media-url="assets/project-pic-4-01.jpg">
+          <img src="assets/g21.jpg" alt="Brand Identity">
+          <div class="project-info">
+            <h6>Personal</h6>
+            <h3 class="project-title">The Creative Feed</h3>
+            <span class="project-category">Social Media Post</span>
+          </div>
+        </a>
+        <!-- Notun kono graphic design er card add korte chaile ekhane add korben -->
+
       </div>
     </div>
   </section>
@@ -191,7 +468,7 @@
       <video id="lightboxVideo" controls style="display: none; max-width: 100%; max-height: 80vh; border-radius: var(--radius); outline: none; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);"></video>
       
       <!-- YouTube / Vimeo iframe Container -->
-      <iframe id="lightboxIframe" frameborder="0" allow="autoplay; fullscreen" style="display: none; width: 80vw; height: 70vh; max-width: 1000px; border-radius: var(--radius); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);"></iframe>
+      <iframe id="lightboxIframe" frameborder="0" allow="autoplay; fullscreen" style="display: none; width: 95vw; height: 88vh; max-width: 1400px; border-radius: var(--radius); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); background: white;"></iframe>
       
       <h3 id="lightboxCaption"></h3>
     </div>
