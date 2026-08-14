@@ -858,4 +858,338 @@ main > section:nth-child(2) {
 /* Jokhon card flip hoye jabe, tokhon samner card-ta ar click nibe na */
 .project-flip-inner.is-flipped .project-front {
   pointer-events: none;
+}/* ==============================================
+   Modern About Page Styles (Framer-like)
+   ============================================== */
+
+/* Cinematic Hero Image */
+.about-hero-img {
+  width: 100%;
+  max-width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--line-strong);
+}
+
+.about-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%; /* Adjusts focus to the face */
+}
+
+/* Modern Split Layout */
+.modern-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.split-left .section-title {
+  position: sticky;
+  top: 120px;
+  margin-bottom: 0;
+}
+
+.large-text {
+  font-size: 24px !important;
+  color: var(--c-light) !important;
+  font-weight: 500;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.mt-30 { margin-top: 30px; }
+.mb-40 { margin-bottom: 40px; }
+
+/* Timeline Setup */
+.timeline-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 30px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.timeline-year {
+  font-family: var(--font-mono);
+  color: var(--c-mint);
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 4px;
+}
+
+.timeline-info h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--c-light);
+  margin-bottom: 12px;
+}
+
+.timeline-info p {
+  color: var(--ink-dim);
+  font-size: 16px;
+}
+
+/* Tools Grid (Glassmorphism) */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.tool-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 24px;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--c-mint);
+  background: rgba(0, 222, 132, 0.05);
+}
+
+.tool-card h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--c-light);
+  margin-bottom: 6px;
+}
+
+.tool-card p {
+  font-size: 13px;
+  color: var(--c-mint);
+}
+
+/* Responsive adjustments for modern layout */
+@media (max-width: 860px) {
+  .modern-split-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .split-left .section-title {
+    position: relative;
+    top: 0;
+    margin-bottom: 20px;
+  }
+  .about-hero-img {
+    height: 350px;
+  }
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}/* ==============================================
+   About Page: Side-by-Side Hero & Contacts
+   ============================================== */
+
+/* Hero Split Layout */
+.hero-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-split-image img {
+  width: 100%;
+  height: auto; /* Eta image-ke stretch ba crop hote dibe na */
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--line-strong);
+}
+
+/* Intro Video Player */
+.intro-video-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.intro-video-player {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Eta video-take first thekei boro kore rakhbe */
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  outline: none;
+  border: 1px solid var(--line-strong);
+  background: var(--c-dark);
+}
+
+
+/* Modern Split Sections */
+.modern-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.split-left .section-title {
+  position: sticky;
+  top: 120px;
+  margin-bottom: 0;
+}
+
+.large-text {
+  font-size: 20px !important;
+  color: var(--c-light) !important;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Timeline & Tools */
+.timeline-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 30px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+
+.timeline-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.timeline-year { font-family: var(--font-mono); color: var(--c-mint); font-size: 14px; font-weight: 600; padding-top: 4px; }
+.timeline-info h3 { font-family: var(--font-display); font-size: 22px; color: var(--c-light); margin-bottom: 12px; }
+.timeline-info p { color: var(--ink-dim); font-size: 16px; }
+
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+.tool-card { background: var(--surface); border: 1px solid var(--line); padding: 24px; border-radius: var(--radius); transition: transform 0.3s ease, border-color 0.3s ease; }
+.tool-card:hover { transform: translateY(-5px); border-color: var(--c-mint); background: rgba(0, 222, 132, 0.05); }
+.tool-card h3 { font-family: var(--font-display); font-size: 18px; color: var(--c-light); margin-bottom: 6px; }
+.tool-card p { font-size: 13px; color: var(--c-mint); }
+
+/* Contact Section Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 24px;
+  border-radius: var(--radius);
+}
+
+.contact-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--c-mint);
+  margin-bottom: 10px;
+}
+
+.contact-link {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--c-light);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover { color: var(--c-mint); }
+
+.contact-text {
+  font-size: 15px;
+  color: var(--ink-dim);
+  line-height: 1.6;
+}
+
+.social-links-inline {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.social-links-inline a {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--c-light);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 4px;
+  transition: all 0.2s ease;
+}
+
+.social-links-inline a:hover {
+  color: var(--c-mint);
+  text-decoration-color: var(--c-mint);
+}
+
+/* Responsive adjustments */
+@media (max-width: 860px) {
+  .hero-split-grid, .modern-split-grid { grid-template-columns: 1fr; gap: 30px; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .split-left .section-title { position: relative; top: 0; margin-bottom: 20px; }
+  .timeline-item { grid-template-columns: 1fr; gap: 10px; }
+  .hero-split-image { order: -1; } /* Mobile e image ta age dekhabe */
+}
+/* ==============================================
+   Glassmorphism Play Button & Video Wrapper
+   ============================================== */
+.intro-video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.glass-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: rgba(240, 246, 246, 0.15); /* Light transparent background */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(240, 246, 246, 0.3);
+  color: var(--c-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Effect */
+.glass-play-btn:hover {
+  background: rgba(0, 222, 132, 0.25);
+  border-color: var(--c-mint);
+  color: var(--c-mint);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* Hide button smoothly when video is playing */
+.intro-video-wrapper.is-playing .glass-play-btn {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%) scale(1.3);
+  pointer-events: none;
 }

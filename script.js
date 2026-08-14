@@ -133,7 +133,7 @@ if (lightboxModal) {
       lightboxIframe.src = '';
       
       // Show appropriate media based on type
-    if (mediaType === 'video') {
+      if (mediaType === 'video') {
         lightboxVideo.style.display = 'block';
         lightboxVideo.src = mediaUrl;
         lightboxVideo.play(); 
@@ -207,6 +207,7 @@ if (motionTabs.length > 0) {
     });
   });
 }
+
 // ==========================================
 // Graphic Design Tab Filtering Logic
 // ==========================================
@@ -250,7 +251,7 @@ const submitBtn = document.querySelector('.newsletter-form button[type="submit"]
 
 if (newsletterForm) {
   newsletterForm.addEventListener('submit', function(e) {
-    e.preventDefault(); // Page reload off korbe
+    e.preventDefault(); 
     
     const emailValue = emailInput.value.trim();
     
@@ -297,4 +298,44 @@ if (newsletterForm) {
       submitBtn.disabled = false;
     });
   });
+}
+
+// ==========================================
+// About Page Intro Video Auto-Play & Button
+// ==========================================
+const introVideo = document.getElementById('aboutIntroVideo');
+const introPlayBtn = document.getElementById('introPlayBtn');
+const videoWrapper = document.querySelector('.intro-video-wrapper');
+
+if (introVideo && introPlayBtn) {
+  const togglePlay = (e) => {
+    e.preventDefault();
+    if (introVideo.paused) {
+      introVideo.play();
+      introVideo.setAttribute('controls', 'controls'); // Play hole controls chole ashbe
+      videoWrapper.classList.add('is-playing');
+    } else {
+      introVideo.pause();
+      introVideo.removeAttribute('controls'); // Pause thakle controls hove jabe
+      videoWrapper.classList.remove('is-playing');
+    }
+  };
+
+  // Ekhon video wrapper-er je kono jaygay click korlei kaj korbe
+  videoWrapper.addEventListener('click', togglePlay);
+
+  // Auto pause on scroll (No auto resume)
+  const videoIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        if (!introVideo.paused) {
+          introVideo.pause();
+          introVideo.removeAttribute('controls');
+          videoWrapper.classList.remove('is-playing');
+        }
+      }
+    });
+  }, { threshold: 0.3 }); 
+
+  videoIo.observe(introVideo);
 }
