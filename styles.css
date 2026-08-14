@@ -847,3 +847,15 @@ main > section:nth-child(2) {
     background-position: -2000px 0; 
   }
 }
+/* ==============================================
+   Fix: Flip Card Click Interaction
+   ============================================== */
+/* Jokhon card normal thakbe, tokhon pichoner card-ta click nibe na */
+.project-flip-inner:not(.is-flipped) .project-back {
+  pointer-events: none;
+}
+
+/* Jokhon card flip hoye jabe, tokhon samner card-ta ar click nibe na */
+.project-flip-inner.is-flipped .project-front {
+  pointer-events: none;
+}
