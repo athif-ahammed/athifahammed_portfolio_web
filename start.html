@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Athif Ahammed | About Me</title>
+<title>Athif Ahammed | Start a Project</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -19,216 +19,180 @@
 <header class="site-header">
   <div class="container header-row">
     <a href="./" class="logo"><img class="logo-img" src="assets/logo-light.png" alt="Athif Ahammed"></a>
-    <nav class="main-nav" id="main-nav">
+   <nav class="main-nav" id="main-nav">
       <a href="./" >Home</a>
       <a href="services-overview.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
-      <a href="about.html"  class="active">About me</a>
+      <a href="about.html" >About me</a>
       <a href="service.html">Pricing</a>
     </nav>
-    <a href="start.html" class="btn btn-primary header-cta">Start A Project</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main>
-  <!-- ==========================================
-       Hero Section (Side-by-Side)
-  ========================================== -->
-  <section class="section" style="padding-top: 140px; padding-bottom: 60px;">
-    <div class="container hero-split-grid reveal">
+  <!-- Hero Area -->
+  <section class="section" style="padding-top: 150px; padding-bottom: 40px; display: flex; align-items: center;">
+    <div class="container reveal" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%;">
       
-      <!-- Text Side -->
-      <div class="hero-split-text">
-        <p class="section-eyebrow">Behind the edits</p>
-        <h1 class="hero-title" style="max-width: 100%; margin-bottom: 24px;">Crafting visual stories <br>that <span class="text-gradient">leave a mark.</span></h1>
-        <p class="body-text large-text" style="margin-bottom: 34px;">
-          I am a passionate Video Editor and Motion Graphic Designer from Bangladesh. My journey started with a simple fascination for how visuals and sound can blend together to evoke emotions and tell powerful stories.
-        </p>
-        <div class="hero-actions">
-          <a href="https://drive.google.com/uc?export=download&id=182Mb6pX3GTIovx2ajVMn74D-AsHTv60P" class="btn btn-primary" target="_blank" rel="noopener">Download Resume</a>
-          <a href="#connect" class="btn btn-outline">Let's Connect</a>
-        </div>
+      <!-- Eyebrow explicit center -->
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <p class="section-eyebrow">Let's Work Together</p>
       </div>
+      
+      <h1 class="hero-title" style="margin-top: 0; margin-bottom: 24px;">Tell me about your <br><span class="text-gradient">next project.</span></h1>
+      
+      <p class="body-text large-text" style="max-width: 600px; text-align: center; color: var(--ink-dim); margin: 0 auto;">
+        Fill out the form below with your project details, and I'll get back to you within 24 hours to discuss how we can bring your vision to life.
+      </p>
 
-      <!-- Image Side (Uncropped) -->
-      <div class="hero-split-image">
-        <img src="assets/My_pic.jpg" alt="Athif Ahammed">
-      </div>
-
-    </div>
-  </section>
-
- <!-- ==========================================
-       Intro Video Section (Auto Play/Pause)
-  ========================================== -->
-  <section class="section" style="padding-bottom: 80px;">
-    <div class="container reveal">
-       <div class="intro-video-wrapper" style="position: relative;">
-         
-         <video id="aboutIntroVideo" playsinline preload="metadata" poster="assets/Video thumbnail.jpg" class="intro-video-player">
-  <source src="assets/my.intro.video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-         
-         <!-- Transparent Blurry Play Button -->
-         <button id="introPlayBtn" class="glass-play-btn" aria-label="Play Video">
-           <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
-             <path d="M8 5v14l11-7z"/>
-           </svg>
-         </button>
-
-       </div>
-    </div>
-  </section>
-
-<!-- ==========================================
-       Experience Timeline
-  ========================================== -->
-  <section class="section">
-    <div class="container modern-split-grid reveal">
-      <div class="split-left">
-        <h2 class="section-title">Experience</h2>
-        <!-- Ei notun line-ta add kora hoyeche -->
-        <p class="body-text" style="max-width: 30ch;">A brief look at my professional journey, collaborating with brands to deliver impactful visual stories.</p>
-      </div>
-      <div class="split-right">
-        
-        <div class="timeline-item">
-          <div class="timeline-year">2024 — Present</div>
-          <div class="timeline-info">
-            <h3>AVIOTHIQ</h3> 
-            <h4 class="designation">Creative Video Editor</h4>
-            <p>Edit engaging social media reels, promotional content, and advertising videos for a fashion and clothing brand, focusing on clean visuals, dynamic pacing, and brand-focused storytelling.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-year">2024 — Present</div>
-          <div class="timeline-info">
-            <h3>Impact Communications</h3>
-            <h4 class="designation">Graphic Designer</h4>
-            <p>Create event branding and corporate design materials, including visual identities, promotional assets, and event-focused designs that reflect the company's professional standards.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2024 — Present</div>
-          <div class="timeline-info">
-            <h3>Faith 11</h3>
-            <h4 class="designation">Creative Video Editor</h4>
-            <p>Edit social media reels and promotional video content for a clothing brand, creating visually engaging content that complements the brand's style and strengthens its digital presence.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2024 — 2024</div>
-          <div class="timeline-info">
-            <h3> Monowara Hospital (Pvt.) Ltd.</h3>
-            <h4 class="designation">Creative Video Editor</h4>
-            <p>Edited doctor consultation and healthcare-focused videos, transforming professional medical content into clear, engaging, and audience-friendly visual communication.</p>
-          </div>
-        </div>
-        
-
-      </div>
     </div>
   </section>
 
   <!-- ==========================================
-       Tools & Arsenal
+       Project Form Section
   ========================================== -->
-  <section class="section">
-    <div class="container modern-split-grid reveal">
-      <div class="split-left">
-        <h2 class="section-title">My Arsenal</h2>
-        <p class="body-text" style="max-width: 30ch;">The creative weapons I use everyday to bring ideas to life.</p>
-      </div>
-      <div class="split-right">
-        <div class="tools-grid">
-          <div class="tool-card">
-            <h3>Premiere Pro</h3>
-            <p>Video Editing & Color Grading</p>
+  <section class="section" style="padding-bottom: 100px;">
+    <div class="container reveal" style="max-width: 750px;">
+      
+      <!-- Form Setup (Added ID for JS and removed default redirect) -->
+      <form id="projectForm" action="https://api.web3forms.com/submit" method="POST" class="project-form">
+        
+        <input type="hidden" name="access_key" value="3daf8c11-0e73-46ae-b1db-a81798a6d5c2">
+
+        <!-- ==============================
+             Part 1: Client Information 
+        =============================== -->
+        <h3 class="form-section-title">1. Client Information</h3>
+        <div class="form-grid">
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
           </div>
-          <div class="tool-card">
-            <h3>After Effects</h3>
-            <p>Motion Graphics & Special Effects</p>
+          
+          <!-- Email Address -->
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
           </div>
-          <div class="tool-card">
-            <h3>Illustrator</h3>
-            <p>Vector Art & Brand Identity</p>
+
+          <!-- Phone / WhatsApp -->
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp Number</label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+880 1XXX XXXXXX" required>
           </div>
-          <div class="tool-card">
-            <h3>Photoshop</h3>
-            <p>Compositing & Retouching</p>
+
+          <!-- Company / Brand (Optional) -->
+          <div class="form-group">
+            <label for="company">Company / Brand Name (Optional)</label>
+            <input type="text" id="company" name="company" class="form-control" placeholder="Your Brand Ltd.">
           </div>
         </div>
-      </div>
+
+        <!-- ==============================
+             Part 2: Project Details 
+        =============================== -->
+        <h3 class="form-section-title" style="margin-top: 40px;">2. Project Details</h3>
+        <div class="form-grid">
+          <!-- Service Category -->
+          <div class="form-group">
+            <label for="service">Select Service</label>
+            <select id="service" name="service" class="form-control" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="Video Editing">Video Editing</option>
+              <option value="Graphic Design">Graphic Design</option>
+              <option value="Motion Graphics">Motion Graphics</option>
+            </select>
+          </div>
+
+          <!-- Package Plan -->
+          <div class="form-group">
+            <label for="package">Select Plan</label>
+            <select id="package" name="package" class="form-control" required>
+              <option value="" disabled selected>Select a plan</option>
+              <option value="Starter">Starter</option>
+              <option value="Standard">Standard</option>
+              <option value="Premium">Premium</option>
+            </select>
+          </div>
+
+          <!-- Social Media Links (Must fill) -->
+          <div class="form-group">
+            <label for="social">Social Media Links</label>
+            <input type="text" id="social" name="Social_Links" class="form-control" placeholder="FB / Insta / LinkedIn profile link" required>
+          </div>
+
+          <!-- How did you find me? (Must fill) -->
+          <div class="form-group">
+            <label for="source">How did you find me?</label>
+            <select id="source" name="Source" class="form-control" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="Facebook">Facebook</option>
+              <option value="Instagram">Instagram</option>
+              <option value="LinkedIn">LinkedIn</option>
+              <option value="Behance">Behance</option>
+              <option value="Friend/Referral">Friend / Referral</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Project Description Textbox (Optional) -->
+        <div class="form-group full-width" style="margin-top: 24px;">
+          <label for="details">Anything else you want to share about the project? (Optional)</label>
+          <textarea id="details" name="Project_Details" class="form-control" rows="4" placeholder="Tell me a bit about your project, goals, timeline, or any references..."></textarea>
+        </div>
+
+        <!-- ==============================
+             Part 3: Agreement Checkbox 
+        =============================== -->
+        <div class="form-group full-width checkbox-group">
+          <!-- checkbox must fill -->
+          <input type="checkbox" id="terms" name="Terms_Agreed" value="Yes" required>
+          <label for="terms">I have provided accurate project information and agree to the service terms.</label>
+        </div>
+
+        <!-- Submit Button & Terms Note -->
+        <div class="form-submit" style="margin-top: 32px; text-align: center;">
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; max-width: 320px; padding: 16px; font-size: 16px;">
+            Submit Project Request <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i>
+          </button>
+          
+          <!-- Terms Warning Note -->
+          <p style="margin-top: 20px; font-size: 12.5px; color: var(--ink-faint); line-height: 1.6; max-width: 500px; margin-left: auto; margin-right: auto;">
+            Please read the <a href="terms.html" style="color: var(--c-mint); text-decoration: underline;">Terms & Conditions</a> carefully before submitting your order. By proceeding, you acknowledge and agree to all the terms mentioned. Once the project is confirmed, any issue arising from terms that were already stated will not be considered grounds for dispute or exception.
+          </p>
+        </div>
+
+      </form>
+
     </div>
   </section>
 
+  
   <!-- ==========================================
-   <!-- ==========================================
-       Contact & Social Links
+       Success Popup Modal (Progress Bar Style)
   ========================================== -->
-  <section class="section" id="connect" style="padding-bottom: 100px;">
-    <div class="container modern-split-grid reveal">
-      <div class="split-left">
-        <h2 class="section-title">Get in Touch</h2>
-        <p class="body-text" style="max-width: 30ch;">Open for freelance opportunities, collaborations, and coffee chats.</p>
-      </div>
-      <div class="split-right contact-grid">
-        
-        <div class="contact-card">
-          <p class="contact-label">Email</p>
-          <p><b>info.athifahammed@gmail.com</b></p>
-        </div>
-        
-        <div class="contact-card">
-          <p class="contact-label">Phone</p>
-          <p ><b>(+880) 1624-191286</b></p>
-        </div>
-
-        <div class="contact-card">
-          <p class="contact-label">Location</p>
-          <p class="contact-text">25, Shahid Sabbir Alam Khandakar Road,<br>Masdair, Narayanganj, Bangladesh</p>
-        </div>
-
-        
-          <div class="contact-card">
-          <p class="contact-label">Socials (Personal)</p>
-          <div class="social-icons-inline">
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/athif.ahammed.fb" target="_blank" aria-label="Facebook" class="social-icon-btn">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com//_atif_ahammed/" target="_blank" aria-label="Instagram" class="social-icon-btn">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/athif56/" target="_blank" aria-label="LinkedIn" class="social-icon-btn">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <!-- Whatsapp -->
-            <a href="http://wa.me/+8801624191286" target="_blank" aria-label="WhatsApp" class="social-icon-btn">
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <!-- Behance -->
-            <a href="https://www.behance.net/athif_ahammed" target="_blank" aria-label="Behance" class="social-icon-btn">
-              <i class="fa-brands fa-behance"></i>
-            </a>
-            
-            
-          </div>
-        </div>
-
+  <div id="successModal" class="success-modal-overlay">
+    <div class="success-modal">
+      <div class="modal-icon"><i class="fa-solid fa-circle-check"></i></div>
+      <h2 style="color: var(--c-light); margin-bottom: 12px;">Thank You!</h2>
+      <p style="color: var(--ink-dim); font-size: 15px; margin-bottom: 24px; line-height: 1.6;">
+        Your request has been successfully submitted. I will contact you within 24 hours to discuss the details and finalize the project.
+      </p>
+      
+      <!-- Redirect text & Green shrinking line -->
+      <p class="modal-redirect-text">Redirecting to Home page...</p>
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill"></div>
       </div>
     </div>
-  </section>
+  </div>
 
 </main>
-
-<!-- ==========================================
-     Footer
+  <!-- ==========================================
+     Footer (Fixed & Placed Properly)
 ========================================== -->
 <footer class="site-footer">
   <div class="container footer-grid">
@@ -237,7 +201,7 @@
       <p>© 2025 Athif Ahammed.<br>All rights reserved.</p>
     </div>
 
-    <div class="footer-col">
+   <div class="footer-col">
       <h4>Menu</h4>
       <a href="./">Home</a>
       <a href="services-overview.html">Services</a>

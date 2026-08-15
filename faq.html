@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Athif Ahammed | About Me</title>
+<title>Athif Ahammed | FAQ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -20,11 +20,10 @@
   <div class="container header-row">
     <a href="./" class="logo"><img class="logo-img" src="assets/logo-light.png" alt="Athif Ahammed"></a>
     <nav class="main-nav" id="main-nav">
-      <a href="./" >Home</a>
-      <a href="services-overview.html">Services</a>
+      <a href="./">Home</a>
       <a href="portfolio.html">Portfolio</a>
-      <a href="about.html"  class="active">About me</a>
-      <a href="service.html">Pricing</a>
+      <a href="about.html">About me</a>
+      <a href="service.html">Service</a>
     </nav>
     <a href="start.html" class="btn btn-primary header-cta">Start A Project</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
@@ -33,198 +32,163 @@
 
 <main>
   <!-- ==========================================
-       Hero Section (Side-by-Side)
+       Hero Section
   ========================================== -->
-  <section class="section" style="padding-top: 140px; padding-bottom: 60px;">
-    <div class="container hero-split-grid reveal">
+  <section class="section" style="padding-top: 150px; padding-bottom: 40px; display: flex; align-items: center;">
+    <div class="container reveal" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%;">
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <p class="section-eyebrow">Got Questions?</p>
+      </div>
+      <h1 class="hero-title" style="margin-top: 0; margin-bottom: 24px; max-width: 100%;">Frequently Asked <span class="text-gradient">Questions</span></h1>
+      <p class="body-text large-text" style="max-width: 700px; text-align: center; color: var(--ink-dim); margin: 0 auto;">
+        Common questions about ordering, pricing, revisions, delivery, and project requirements.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FAQ Accordion Section
+  ========================================== -->
+  <section class="section" style="padding-bottom: 100px;">
+    <div class="container reveal" style="max-width: 800px;">
+      <div class="faq-container">
+        
+        <div class="faq-item">
+          <div class="faq-question">1. How do I place an order? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Choose the service and package that best fits your needs, click Get Started, and fill out the order form with your project details. I’ll review your requirements and get in touch to discuss the project before we begin.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">2. Is the price shown on the website the final price? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Not always. The displayed price is an initial estimated amount based on the selected package. The final price may increase or decrease depending on the project's actual requirements, complexity, and scope.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">3. Do I need to pay in advance? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes. An advance payment is required to confirm your project and reserve a slot. Advance payments are non-refundable.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">4. How long will my project take? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">The delivery time depends on the project's scope, complexity, and the amount of content involved. A specific deadline will be discussed and confirmed before the project begins.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">5. How many revisions are included? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">The number of included revisions depends on your selected package. Additional revisions or major changes outside the original scope may require an additional fee.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">6. What if I need changes after the project is completed? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Changes requested after final approval may be treated as a new request and could involve an additional charge.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">7. What do I need to provide for my project? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Depending on the service, you may need to provide footage, images, logos, text, brand guidelines, references, music, or other necessary assets.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">8. Can you work with raw footage from my phone or camera? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes. You can provide your raw footage through Google Drive, Dropbox, WeTransfer, or another agreed file-sharing platform.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">9. Can I request a custom package? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Absolutely. If your project doesn't fit any of the listed packages, you can submit your requirements and we can discuss a custom package and pricing.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">10. Do you provide source/editable files? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Source files are not included by default unless specifically mentioned in the package or agreed upon separately.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">11. Can you deliver urgent/rush projects? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Rush projects may be possible depending on availability. An additional rush fee may apply depending on the required deadline and workload.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">12. Will my project be featured in your portfolio? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Unless the project is confidential or you've requested otherwise, completed work may be showcased in my portfolio, website, or social media for promotional purposes.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">13. What happens if I cancel my project? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">If the project has been confirmed or work has started, the advance payment will remain non-refundable. Any additional circumstances will be handled according to the agreed Terms & Conditions.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">14. What payment methods do you accept? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Payment methods can be discussed and confirmed during the project confirmation process.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">15. What if I have a question that isn't answered here? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Feel free to contact me with your requirements. I'll be happy to discuss your project and provide the information you need.</div></div>
+        </div>
+
+      </div>
       
-      <!-- Text Side -->
-      <div class="hero-split-text">
-        <p class="section-eyebrow">Behind the edits</p>
-        <h1 class="hero-title" style="max-width: 100%; margin-bottom: 24px;">Crafting visual stories <br>that <span class="text-gradient">leave a mark.</span></h1>
-        <p class="body-text large-text" style="margin-bottom: 34px;">
-          I am a passionate Video Editor and Motion Graphic Designer from Bangladesh. My journey started with a simple fascination for how visuals and sound can blend together to evoke emotions and tell powerful stories.
-        </p>
-        <div class="hero-actions">
-          <a href="https://drive.google.com/uc?export=download&id=182Mb6pX3GTIovx2ajVMn74D-AsHTv60P" class="btn btn-primary" target="_blank" rel="noopener">Download Resume</a>
-          <a href="#connect" class="btn btn-outline">Let's Connect</a>
-        </div>
+     <!-- Contact CTA -->
+      <div style="text-align: center; margin-top: 50px;">
+        <p style="color: var(--ink-dim); margin-bottom: 20px;">Still have questions?</p>
+        <!-- Button to open popup -->
+        <button id="openContactBtn" class="btn btn-outline">Send a Message</button>
       </div>
 
-      <!-- Image Side (Uncropped) -->
-      <div class="hero-split-image">
-        <img src="assets/My_pic.jpg" alt="Athif Ahammed">
-      </div>
-
-    </div>
-  </section>
-
- <!-- ==========================================
-       Intro Video Section (Auto Play/Pause)
-  ========================================== -->
-  <section class="section" style="padding-bottom: 80px;">
-    <div class="container reveal">
-       <div class="intro-video-wrapper" style="position: relative;">
-         
-         <video id="aboutIntroVideo" playsinline preload="metadata" poster="assets/Video thumbnail.jpg" class="intro-video-player">
-  <source src="assets/my.intro.video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-         
-         <!-- Transparent Blurry Play Button -->
-         <button id="introPlayBtn" class="glass-play-btn" aria-label="Play Video">
-           <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
-             <path d="M8 5v14l11-7z"/>
-           </svg>
-         </button>
-
-       </div>
-    </div>
-  </section>
-
-<!-- ==========================================
-       Experience Timeline
-  ========================================== -->
-  <section class="section">
-    <div class="container modern-split-grid reveal">
-      <div class="split-left">
-        <h2 class="section-title">Experience</h2>
-        <!-- Ei notun line-ta add kora hoyeche -->
-        <p class="body-text" style="max-width: 30ch;">A brief look at my professional journey, collaborating with brands to deliver impactful visual stories.</p>
-      </div>
-      <div class="split-right">
-        
-        <div class="timeline-item">
-          <div class="timeline-year">2024 — Present</div>
-          <div class="timeline-info">
-            <h3>AVIOTHIQ</h3> 
-            <h4 class="designation">Creative Video Editor</h4>
-            <p>Edit engaging social media reels, promotional content, and advertising videos for a fashion and clothing brand, focusing on clean visuals, dynamic pacing, and brand-focused storytelling.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-year">2024 — Present</div>
-          <div class="timeline-info">
-            <h3>Impact Communications</h3>
-            <h4 class="designation">Graphic Designer</h4>
-            <p>Create event branding and corporate design materials, including visual identities, promotional assets, and event-focused designs that reflect the company's professional standards.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2024 — Present</div>
-          <div class="timeline-info">
-            <h3>Faith 11</h3>
-            <h4 class="designation">Creative Video Editor</h4>
-            <p>Edit social media reels and promotional video content for a clothing brand, creating visually engaging content that complements the brand's style and strengthens its digital presence.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2024 — 2024</div>
-          <div class="timeline-info">
-            <h3> Monowara Hospital (Pvt.) Ltd.</h3>
-            <h4 class="designation">Creative Video Editor</h4>
-            <p>Edited doctor consultation and healthcare-focused videos, transforming professional medical content into clear, engaging, and audience-friendly visual communication.</p>
-          </div>
-        </div>
-        
-
-      </div>
     </div>
   </section>
 
   <!-- ==========================================
-       Tools & Arsenal
+       Contact Popup Modal
   ========================================== -->
-  <section class="section">
-    <div class="container modern-split-grid reveal">
-      <div class="split-left">
-        <h2 class="section-title">My Arsenal</h2>
-        <p class="body-text" style="max-width: 30ch;">The creative weapons I use everyday to bring ideas to life.</p>
-      </div>
-      <div class="split-right">
-        <div class="tools-grid">
-          <div class="tool-card">
-            <h3>Premiere Pro</h3>
-            <p>Video Editing & Color Grading</p>
-          </div>
-          <div class="tool-card">
-            <h3>After Effects</h3>
-            <p>Motion Graphics & Special Effects</p>
-          </div>
-          <div class="tool-card">
-            <h3>Illustrator</h3>
-            <p>Vector Art & Brand Identity</p>
-          </div>
-          <div class="tool-card">
-            <h3>Photoshop</h3>
-            <p>Compositing & Retouching</p>
-          </div>
+  <div id="contactModal" class="contact-modal-overlay">
+    <div class="contact-modal">
+      <!-- Close Button -->
+      <button class="modal-close-btn" id="closeContactBtn">&times;</button>
+      
+      <h2 style="color: var(--c-light); margin-bottom: 8px; font-family: var(--font-display);">Ask a Question</h2>
+      <p style="color: var(--ink-dim); font-size: 14px; margin-bottom: 24px;">Drop your question below and I'll get back to you to your email.</p>
+      
+      <!-- Mini Contact Form -->
+      <form id="contactForm" class="contact-form">
+        <!-- Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="3daf8c11-0e73-46ae-b1db-a81798a6d5c2">
+        <!-- Email Subject -->
+        <input type="hidden" name="subject" value="New Question from FAQ Page">
+        
+        <div class="form-group" style="margin-bottom: 16px; text-align: left;">
+          <label for="contactName">Name</label>
+          <input type="text" id="contactName" name="name" class="form-control" required placeholder="John Doe">
         </div>
+        
+        <div class="form-group" style="margin-bottom: 16px; text-align: left;">
+          <label for="contactEmail">Email</label>
+          <input type="email" id="contactEmail" name="email" class="form-control" required placeholder="john@example.com">
+        </div>
+        
+        <div class="form-group" style="margin-bottom: 24px; text-align: left;">
+          <label for="contactMessage">Your Question</label>
+          <textarea id="contactMessage" name="message" class="form-control" rows="3" required placeholder="How can I help you?"></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Send Message <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i>
+        </button>
+      </form>
+
+      <!-- Success Message (Hidden by default) -->
+      <div id="contactSuccessMsg" style="display: none; color: var(--c-mint); margin-top: 20px; font-size: 15px; font-weight: 500; text-align: center;">
+        <i class="fa-solid fa-circle-check" style="font-size: 24px; margin-bottom: 10px; display: block;"></i> 
+        Message sent successfully! I'll get back to you soon.
       </div>
+
+    </div>
+  </div>
+
     </div>
   </section>
-
-  <!-- ==========================================
-   <!-- ==========================================
-       Contact & Social Links
-  ========================================== -->
-  <section class="section" id="connect" style="padding-bottom: 100px;">
-    <div class="container modern-split-grid reveal">
-      <div class="split-left">
-        <h2 class="section-title">Get in Touch</h2>
-        <p class="body-text" style="max-width: 30ch;">Open for freelance opportunities, collaborations, and coffee chats.</p>
-      </div>
-      <div class="split-right contact-grid">
-        
-        <div class="contact-card">
-          <p class="contact-label">Email</p>
-          <p><b>info.athifahammed@gmail.com</b></p>
-        </div>
-        
-        <div class="contact-card">
-          <p class="contact-label">Phone</p>
-          <p ><b>(+880) 1624-191286</b></p>
-        </div>
-
-        <div class="contact-card">
-          <p class="contact-label">Location</p>
-          <p class="contact-text">25, Shahid Sabbir Alam Khandakar Road,<br>Masdair, Narayanganj, Bangladesh</p>
-        </div>
-
-        
-          <div class="contact-card">
-          <p class="contact-label">Socials (Personal)</p>
-          <div class="social-icons-inline">
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/athif.ahammed.fb" target="_blank" aria-label="Facebook" class="social-icon-btn">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com//_atif_ahammed/" target="_blank" aria-label="Instagram" class="social-icon-btn">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/athif56/" target="_blank" aria-label="LinkedIn" class="social-icon-btn">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <!-- Whatsapp -->
-            <a href="http://wa.me/+8801624191286" target="_blank" aria-label="WhatsApp" class="social-icon-btn">
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <!-- Behance -->
-            <a href="https://www.behance.net/athif_ahammed" target="_blank" aria-label="Behance" class="social-icon-btn">
-              <i class="fa-brands fa-behance"></i>
-            </a>
-            
-            
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <!-- ==========================================

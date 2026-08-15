@@ -339,3 +339,189 @@ if (introVideo && introPlayBtn) {
 
   videoIo.observe(introVideo);
 }
+// Auto-select Form values based on URL parameters (e.g., ?service=Video Editing&package=Standard)
+document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const serviceParam = urlParams.get('service');
+  const packageParam = urlParams.get('package');
+
+  if (serviceParam) {
+    const serviceSelect = document.getElementById('service');
+    if (serviceSelect) serviceSelect.value = serviceParam;
+  }
+  
+  if (packageParam) {
+    const packageSelect = document.getElementById('package');
+    if (packageSelect) packageSelect.value = packageParam;
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // ১. URL থেকে অটোমেটিক সার্ভিস সিলেক্ট এবং কালার হাইলাইট লজিক
+  const urlParams = new URLSearchParams(window.location.search);
+  const serviceParam = urlParams.get('service');
+  const packageParam = urlParams.get('package');
+
+  const serviceSelect = document.getElementById('service');
+  const packageSelect = document.getElementById('package');
+
+  // Service Select Logic
+  if (serviceSelect && serviceParam) {
+    serviceSelect.value = serviceParam;
+    serviceSelect.classList.add('highlight-select'); // Green color add
+    
+    // User change korle green color remove hobe
+    serviceSelect.addEventListener('change', function() {
+      this.classList.remove('highlight-select');
+    });
+  }
+  
+  // Package Select Logic
+  if (packageSelect && packageParam) {
+    packageSelect.value = packageParam;
+    packageSelect.classList.add('highlight-select'); // Green color add
+    
+    // User change korle green color remove hobe
+    packageSelect.addEventListener('change', function() {
+      this.classList.remove('highlight-select');
+    });
+  }
+  // ২. Form Submit & Progress Bar Redirect
+  const projectForm = document.getElementById('projectForm');
+  const successModal = document.getElementById('successModal');
+
+  if (projectForm && successModal) {
+    const submitBtn = projectForm.querySelector('button[type="submit"]');
+    
+    projectForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // সাবমিট বাটন লোডিং স্টেট
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin" style="margin-left: 8px;"></i>';
+      submitBtn.disabled = true;
+
+      const formData = new FormData(projectForm);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.status === 200) {
+          // পপআপ শো করানো (সিএসএস অ্যানিমেশন নিজে থেকেই গ্রিন বার কমানো শুরু করবে)
+          successModal.classList.add('active');
+          projectForm.reset();
+
+          // ঠিক ১০ সেকেন্ড পর হোম পেজে রিডাইরেক্ট
+          setTimeout(() => {
+            window.location.href = './';
+          }, 5000);
+
+        } else {
+          alert("Something went wrong! Please try again.");
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        alert("Connection error! Please check your internet.");
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+      });
+    });
+  }
+});
+// ==========================================
+// FAQ Accordion Logic
+// ==========================================
+const faqItems = document.querySelectorAll('.faq-item');
+if (faqItems.length > 0) {
+  faqItems.forEach(item => {
+    item.addEventListener('click', () => {
+      // (Optional) Onno gula auto close korar jonno:
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item && otherItem.classList.contains('active')) {
+          otherItem.classList.remove('active');
+        }
+      });
+      // Click kora item ta open/close kora:
+      item.classList.toggle('active');
+    });
+  });
+}// ==========================================
+// FAQ Contact Popup & Submission Logic
+// ==========================================
+const contactModal = document.getElementById('contactModal');
+const openContactBtn = document.getElementById('openContactBtn');
+const closeContactBtn = document.getElementById('closeContactBtn');
+const contactForm = document.getElementById('contactForm');
+const contactSuccessMsg = document.getElementById('contactSuccessMsg');
+
+if (contactModal && openContactBtn) {
+  // Open Modal
+  openContactBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    contactModal.classList.add('active');
+    contactSuccessMsg.style.display = 'none'; // Hide success message if it was open before
+    contactForm.style.display = 'block'; // Show form
+  });
+
+  // Close Modal Function
+  const closeContact = () => {
+    contactModal.classList.remove('active');
+  };
+
+  // Close on X button click
+  closeContactBtn.addEventListener('click', closeContact);
+  
+  // Close on outside click
+  contactModal.addEventListener('click', (e) => {
+    if (e.target === contactModal) {
+      closeContact();
+    }
+  });
+
+  // Form Submit to Web3Forms
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    
+    // Loading State
+    submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin" style="margin-left: 8px;"></i>';
+    submitBtn.disabled = true;
+
+    const formData = new FormData(contactForm);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (response.status === 200) {
+        // Hide form and show success message smoothly
+        contactForm.style.display = 'none';
+        contactSuccessMsg.style.display = 'block';
+        contactForm.reset();
+        
+        // Auto close modal after 4 seconds
+        setTimeout(() => {
+          closeContact();
+        }, 4000);
+      } else {
+        alert("Something went wrong! Please try again.");
+      }
+    })
+    .catch(error => {
+      alert("Connection error! Please check your internet.");
+    })
+    .finally(() => {
+      // Reset button
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    });
+  });
+}
