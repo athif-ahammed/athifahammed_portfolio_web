@@ -1961,3 +1961,327 @@ select.form-control.highlight-select {
   transform: translateY(-4px) !important;
   box-shadow: 0 12px 24px rgba(0, 222, 132, 0.35) !important; /* Green glowing shadow */
 }
+/* ==============================================
+   MOBILE HERO FIX: FIT TO SCREEN FOR GLASS EFFECT
+   ============================================== */
+@media (max-width: 860px) {
+  
+  /* হিরো সেকশনকে যেকোনো মোবাইল স্ক্রিনের (100vh/100svh) মধ্যে পারফেক্টলি ফিট করা */
+  .hero {
+    height: 100vh !important;
+    height: 100svh !important; /* মডার্ন মোবাইলের জন্য */
+    padding: 100px 0 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: hidden !important;
+  }
+  
+  .hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 12px !important; /* গ্যাপ কমানো হয়েছে যাতে স্ক্রিনে জায়গা পায় */
+  }
+
+  /* কন্টেন্টগুলোকে মোবাইলের জন্য একটু ছোট ও সুন্দর করা */
+  .hero-copy { width: 100% !important; }
+  .hero-title { font-size: 32px !important; line-height: 1.2 !important; }
+  .hero-sub { font-size: 14px !important; margin-top: 10px !important; }
+  
+  /* বাটন ফিক্স */
+  .hero-actions { display: flex !important; flex-direction: row !important; justify-content: center !important; margin-top: 15px !important; gap: 10px !important; }
+  .hero-actions .btn { padding: 12px 20px !important; font-size: 14px !important; }
+  
+  /* স্ট্যাটস ফিক্স */
+  .hero-stats-row { display: flex !important; flex-direction: row !important; justify-content: center !important; margin-top: 20px !important; gap: 20px !important; }
+  .stat { border-right: none !important; padding: 0 !important; margin: 0 !important; }
+  .stat-num { font-size: 26px !important; }
+  
+  /* ইলাস্ট্রেশন (সবুজ গোল অংশটা) মোবাইলে ফিট করার জন্য ছোট করা */
+  .hero-illustration { height: 160px !important; width: 100% !important; margin-top: 10px !important; }
+  .orbit-1 { width: 120px !important; height: 120px !important; }
+  .orbit-2 { width: 180px !important; height: 180px !important; }
+  .hero-orb { width: 60px !important; height: 60px !important; margin: -30px 0 0 -30px !important; }
+}/* ==============================================
+   MOBILE HERO ANIMATION BACKGROUND FIX
+   ============================================== */
+@media (max-width: 980px) {
+  .hero-grid {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* কন্টেন্ট (টেক্সট, বাটন, স্ট্যাটস) উপরে রাখার জন্য */
+ .hero-copy {
+    text-align: center !important;
+  }
+  .hero-title, .hero-sub {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  /* অ্যানিমেশনটাকে অ্যাবসলিউট করে ঠিক টেক্সটের পেছনে পাঠানো হলো */
+  .hero-illustration {
+    position: absolute !important;
+    top: 20px !important; 
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 0 !important;
+    opacity: 0.25 !important; /* লেখা ক্লিয়ার বোঝার জন্য অপাসিটি কমানো হয়েছে */
+    pointer-events: none !important; /* বাটন ক্লিকে যাতে ঝামেলা না করে */
+    width: 100% !important;
+    height: 350px !important;
+    margin: 0 !important;
+  }
+
+  /* বাটন এবং স্ট্যাটসগুলো সেন্টারে সুন্দর করে সাজানোর জন্য */
+  .hero-actions { 
+    justify-content: center !important; 
+    margin-top: 30px !important; 
+  }
+  .hero-stats-row { 
+    display: flex !important; 
+    flex-wrap: wrap !important; /* র‍্যাপ অন করা হয়েছে যাতে নিচে নামতে পারে */
+    justify-content: center !important; 
+    gap: 30px 0px !important; /* ওপর-নিচে গ্যাপ ৩০পিক্সেল */
+    margin-top: 40px !important; 
+  }
+  
+  .stat { 
+    border: none !important; 
+    padding: 0 !important; 
+    margin: 0 !important; 
+    text-align: center !important; 
+  }
+  
+  /* প্রথম দুটি (30+ এবং 65+) পাশাপাশি থাকবে (50% করে জায়গা নেবে) */
+  .stat:nth-child(1), .stat:nth-child(2) {
+    flex: 0 0 50% !important;
+  }
+  
+  /* ৩য় টা (70+) ফুল উইডথ নিয়ে নিজে নিজে নিচে সেন্টারে বসবে */
+  .stat:nth-child(3) {
+    flex: 0 0 100% !important;
+  }
+}/* ==============================================
+   TABLET HERO SIZE FIX (768px to 980px)
+   ============================================== */
+@media (min-width: 768px) and (max-width: 980px) {
+  
+  /* ১. টেক্সট সাইজ ট্যাবলেটের জন্য বড় করা হলো */
+  .hero-title { font-size: 56px !important; line-height: 1.15 !important; }
+  .hero-sub { font-size: 18px !important; margin-top: 16px !important; max-width: 600px !important; }
+  
+  /* ২. বাটনগুলো বড় করা হলো */
+  .hero-actions { margin-top: 40px !important; gap: 20px !important; }
+  .hero-actions .btn { padding: 16px 36px !important; font-size: 16px !important; }
+  
+  /* ৩. স্ট্যাটসগুলো এক লাইনে ৩টা পাশাপাশি বড় করে বসানো হলো (যেহেতু ট্যাবলেটে প্রচুর জায়গা আছে) */
+  .hero-stats-row { 
+    gap: 60px !important; 
+    margin-top: 60px !important; 
+  }
+  .stat:nth-child(1), .stat:nth-child(2), .stat:nth-child(3) {
+    flex: unset !important; /* মোবাইলের ২+১ লেআউট ট্যাবলেটে বাতিল করে এক লাইনে আনা হলো */
+  }
+  .stat-num { font-size: 42px !important; }
+  .stat-label { font-size: 15px !important; }
+  
+  /* ৪. পেছনের অ্যানিমেশনটা স্ক্রিনের সাথে সামঞ্জস্য রেখে বড় করা হলো */
+  .hero-illustration { 
+    height: 500px !important; 
+    top: -20px !important; 
+    opacity: 0.3 !important; 
+  
+}}/* ==============================================
+   ABOUT PAGE HERO FIX (FINAL: BUTTONS SIDE-BY-SIDE & NO CUTOFF)
+   ============================================== */
+@media (max-width: 980px) {
+  
+  /* height auto করে overflow visible করা হলো যাতে বিন্দুমাত্র কাটা না পড়ে */
+  .section[style*="padding-top: 140px"] {
+    padding: 100px 0 30px !important;
+    min-height: 100vh !important;
+    height: auto !important; 
+    display: flex !important;
+    align-items: center !important;
+    overflow: visible !important; 
+  }
+
+  .hero-split-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 16px !important;
+  }
+
+  /* ছবি */
+  .hero-split-image {
+    order: -1 !important;
+    width: 100% !important;
+  }
+  .hero-split-image img {
+    height: 30vh !important; /* স্ক্রিনে সুন্দরভাবে জায়গা করে দেওয়ার জন্য হাইট একটু কমানো হলো */
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    border-radius: 20px !important;
+    object-fit: cover !important;
+  }
+
+  /* টেক্সট সাইজিং */
+  .hero-split-text { width: 100% !important; }
+  .hero-split-text .section-eyebrow { margin-bottom: 8px !important; }
+  .hero-split-text .hero-title { font-size: 28px !important; line-height: 1.2 !important; margin-bottom: 8px !important; }
+  .hero-split-text .large-text { font-size: 14px !important; line-height: 1.5 !important; margin-bottom: 20px !important; }
+
+  /* বাটন দুটোকে জোর করে পাশাপাশি (Row) বসানোর মাস্টার ফিক্স */
+  .hero-split-text .hero-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* Wrapping অফ করে দেওয়া হলো যাতে নিচে না নামে */
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 0 !important;
+    width: 100% !important;
+  }
+  
+  .hero-split-text .hero-actions .btn {
+    flex: 1 !important; /* দুটোর উইডথ সমানভাবে ভাগ করে নেবে */
+    width: auto !important;
+    padding: 12px 10px !important;
+    font-size: 13.5px !important;
+    margin: 0 !important;
+    white-space: nowrap !important; /* টেক্সট যেন ভেঙ্গে ২ লাইনে না হয় */
+  }
+}/* ==============================================
+   ABOUT PAGE HERO FIX (TABLET ONLY: 768px to 980px)
+   ============================================== */
+@media (min-width: 768px) and (max-width: 980px) {
+  
+  /* ১. ছবিটা ট্যাবলেটের জন্য একটু বড় করা হলো */
+  .hero-split-image img {
+    height: 40vh !important;
+    max-width: 400px !important;
+  }
+
+  /* ২. টেক্সটগুলো পারফেক্টলি সেন্টারে আনা এবং সাইজ বড় করা */
+  .hero-split-text {
+    max-width: 700px !important;
+    margin: 0 auto !important;
+  }
+  
+  .hero-split-text .hero-title {
+    font-size: 42px !important;
+  }
+  
+  .hero-split-text .large-text {
+    font-size: 18px !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* ৩. বাটনগুলোর স্ট্রেচিং বন্ধ করে স্বাভাবিক সাইজে আনা */
+  .hero-split-text .hero-actions {
+    gap: 20px !important;
+    margin-top: 20px !important;
+  }
+  
+  .hero-split-text .hero-actions .btn {
+    flex: unset !important; /* মোবাইলের স্ট্রেচিং বাতিল করা হলো */
+    width: auto !important;
+    padding: 14px 32px !important;
+    font-size: 16px !important;
+  }
+}/* ==============================================
+   ABOUT PAGE HERO FIX (LAPTOP & DESKTOP)
+   ============================================== */
+@media (min-width: 981px) {
+  
+  /* ল্যাপটপের ছোট হাইটে ফিট করার জন্য উপরের বিশাল প্যাডিং কমানো হলো */
+  .section[style*="padding-top: 140px"] {
+    padding-top: 110px !important;
+    padding-bottom: 20px !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* ছবিটা যেন স্ক্রিনের হাইটের ৬৫% এর বেশি জায়গা না নেয় */
+  .hero-split-image img {
+    max-height: 65vh !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    border-radius: 24px !important;
+    object-fit: cover !important; /* ছবির ন্যাচারাল শেপ ঠিক রাখার জন্য */
+  }
+}/* ==============================================
+   PRICING PAGE GLASS EFFECT SHADOW FIX (ALL DEVICES)
+   ============================================== */
+.pricing-content-wrapper {
+  box-shadow: none !important; /* ডেস্কটপ, ট্যাবলেট, মোবাইল সব জায়গা থেকে কালো শ্যাডো রিমুভ করা হলো */
+}/* ==============================================
+   MOBILE & TABLET NAVIGATION & GLASS DROPDOWN FIX
+   ============================================== */
+@media (max-width: 980px) {
+  
+  /* ১. হেডারটাকে একদম উপরে স্টিক করে রাখা হলো */
+  .site-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+    background: rgba(2, 17, 18, 0.95) !important; /* আপনার অরিজিনাল ডার্ক কালার */
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important
+
+  /* ১. হেডার বার ফিক্স এবং রাইট কর্নারে আইকন ঠেলে দেওয়া */
+  .site-header {
+    background: rgba(2, 17, 18, 0.65) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    position: relative !important;
+    z-index: 999 !important;
+  }
+
+  .header-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 0 20px !important;
+  }
+
+  .nav-toggle {
+    margin-left: auto !important;
+    margin-right: -8px !important;
+  }
+
+  /* ২. ড্রপডাউন মেনু গ্লাস ইফেক্ট (গ্যারান্টিড ব্লার ও ট্রান্সপারেন্সি সহ) */
+  .site-header nav,
+  #main-nav {
+    transition: all 0.3s ease-in-out !important;
+  }
+
+  .site-header nav.open,
+  #main-nav.open {
+    background: rgba(2, 17, 18, 0.82) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    padding: 25px 20px !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+    z-index: 998 !important;
+  }
+}

@@ -30,7 +30,7 @@ const io = new IntersectionObserver((entries) => {
       io.unobserve(entry.target);
     }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0.02 });
 revealEls.forEach(el => io.observe(el));
 
 // Animated count-up for stat numbers (30+, 65+, 70+ etc.)
