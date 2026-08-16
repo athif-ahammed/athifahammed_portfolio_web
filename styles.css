@@ -2278,14 +2278,7 @@ select.form-control.highlight-select {
 }/* ==============================================
    START/CONTACT PAGE: VIEW PRICING BUTTON FIX
    ============================================== */
-.hero-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 25px;
-}
-
-/* সেকেন্ডারি বাটন স্টাইল (যদি অলরেডি ক্লাসে থাকে তবে ওভাররাইড হবে) */
+/* সেকেন্ডারি বাটন স্টাইল (প্রাইসিং পেজে যাওয়ার বাটন) */
 .btn-secondary {
   background: transparent !important;
   color: #fff !important;
@@ -2305,11 +2298,15 @@ select.form-control.highlight-select {
 
 /* মোবাইল ও ট্যাবলেটের জন্য ছোট স্ক্রিন অপটিমাইজেশন */
 @media (max-width: 980px) {
-  .hero-actions {
-    margin-top: 20px !important;
-  }
   .btn-secondary {
     padding: 10px 22px !important;
     font-size: 14px !important;
+  }
+}/* ==============================================
+   PORTFOLIO TABS LEFT ALIGN (MOBILE & TABLET)
+   ============================================== */
+@media (max-width: 980px) {
+  .portfolio-tabs {
+    justify-content: flex-start !important; /* বাটনগুলোকে বাম পাশে ঠেলে দেওয়া হলো */
   }
 }
