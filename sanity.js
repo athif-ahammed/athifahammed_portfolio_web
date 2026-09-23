@@ -4,14 +4,18 @@
 const SANITY_PROJECT_ID = 'xn2562m4'; 
 const SANITY_DATASET = 'production';
 
-// সঠিক কোয়েরি: যা ছবি এবং অন্যান্য সব ডেটা ঠিকভাবে নিয়ে আসবে
-const SANITY_QUERY = encodeURIComponent('*[_type == "portfolio"] | order(_createdAt desc) {title, clientName, serviceType, category, mediaType, mediaUrl, "imageUrl": thumbnail.asset->url}');
+// নতুন কোয়েরি: "mainImageUrl" অ্যাড করা হয়েছে
+const SANITY_QUERY = encodeURIComponent('*[_type == "portfolio"] | order(_createdAt desc) {title, clientName, serviceType, category, "categoryRefName": category->title, mediaType, mediaUrl, "imageUrl": thumbnail.asset->url, "mainImageUrl": mainImage.asset->url}');
 const SANITY_API_URL = `https://${SANITY_PROJECT_ID}.api.sanity.io/v2022-03-07/data/query/${SANITY_DATASET}?query=${SANITY_QUERY}`;
 
 async function loadPortfolioFromSanity() {
     const videoGrid = document.getElementById('video-grid');
     const motionGrid = document.getElementById('motion-grid');
     const graphicGrid = document.getElementById('graphic-grid');
+
+    const videoTabs = document.getElementById('video-tabs');
+    const motionTabs = document.getElementById('motion-tabs');
+    const graphicTabs = document.getElementById('graphic-tabs');
 
     if (!videoGrid && !motionGrid && !graphicGrid) return;
 
@@ -24,31 +28,42 @@ async function loadPortfolioFromSanity() {
             if(motionGrid) motionGrid.innerHTML = '';
             if(graphicGrid) graphicGrid.innerHTML = '';
 
+            const videoCats = new Set();
+            const motionCats = new Set();
+            const graphicCats = new Set();
+
+            const categoryFormatMap = {
+                'commercials': 'Commercials',
+                'ecommerce': 'E-commerce Ads',
+                'logo-animation': 'Logo Animation',
+                'Motion Advertisement': 'Motion Advertisement',
+                'Animated Reel': 'Animated Reel',
+                '3D Animation': '3D Animation',
+                'Logo-Design': 'Logo Design',
+                'Menu-Card': 'Menu Card',
+                'Business-Card': 'Business Card',
+                'Social-Media-Post': 'Social Media Post',
+                'Event-Branding': 'Event Branding',
+                'Packaging': 'Packaging'
+            };
+
             result.forEach(project => {
                 let cardClass = "video-card";
                 if(project.serviceType === 'motion-graphics') cardClass = "motion-card";
                 if(project.serviceType === 'graphic-design') cardClass = "graphic-card";
 
-                // ক্যাটাগরির নাম এক্স্যাক্টলি বাটনের মতো দেখানোর ম্যাপিং
-                const categoryFormatMap = {
-                    'commercials': 'Commercials',
-                    'ecommerce': 'E-commerce Ads',
-                    'logo-animation': 'Logo Animation',
-                    'Motion Advertisement': 'Motion Advertisement',
-                    'Animated Reel': 'Animated Reel',
-                    '3D Animation': '3D Animation',
-                    'Logo-Design': 'Logo Design',
-                    'Menu-Card': 'Menu Card',
-                    'Business-Card': 'Business Card',
-                    'Social-Media-Post': 'Social Media Post',
-                    'Event-Branding': 'Event Branding',
-                    'Packaging': 'Packaging'
-                };
+                let rawCategory = project.categoryRefName || project.category || 'Category';
+                const categoryName = categoryFormatMap[rawCategory] || rawCategory;
 
-                const categoryName = categoryFormatMap[project.category] || project.category;
+                if (project.serviceType === 'video-editing') videoCats.add(categoryName);
+                if (project.serviceType === 'motion-graphics') motionCats.add(categoryName);
+                if (project.serviceType === 'graphic-design') graphicCats.add(categoryName);
+
+                // লজিক: মেইন ইমেজ থাকলে সেটা দেখাবে, না থাকলে লিংকের ডেটা, সেটাও না থাকলে থাম্বনেইল
+                const finalMediaUrl = project.mainImageUrl || project.mediaUrl || project.imageUrl;
 
                 const cardHTML = `
-                    <a class="project-card ${cardClass}" href="#" data-category="${project.category}" data-category-name="${categoryName}" data-media-type="${project.mediaType}" data-media-url="${project.mediaUrl || project.imageUrl}">
+                    <a class="project-card ${cardClass}" href="#" data-category="${categoryName}" data-media-type="${project.mediaType}" data-media-url="${finalMediaUrl}">
                         <img src="${project.imageUrl}" alt="${project.title}">
                         <div class="project-info">
                             ${project.clientName ? `<h6>${project.clientName}</h6>` : ''}
@@ -62,6 +77,19 @@ async function loadPortfolioFromSanity() {
                 if (project.serviceType === 'motion-graphics' && motionGrid) motionGrid.innerHTML += cardHTML;
                 if (project.serviceType === 'graphic-design' && graphicGrid) graphicGrid.innerHTML += cardHTML;
             });
+
+            function renderFilterButtons(container, categories) {
+                if (!container) return;
+                let html = `<button class="tab-btn active" data-filter="all">All</button>`;
+                categories.forEach(cat => {
+                    html += `<button class="tab-btn" data-filter="${cat}">${cat}</button>`;
+                });
+                container.innerHTML = html;
+            }
+
+            renderFilterButtons(videoTabs, videoCats);
+            renderFilterButtons(motionTabs, motionCats);
+            renderFilterButtons(graphicTabs, graphicCats);
             
             attachDynamicLightbox();
         }
@@ -78,15 +106,13 @@ function attachDynamicLightbox() {
     const lightboxIframe = document.getElementById('lightboxIframe');
     const lightboxCaption = document.getElementById('lightboxCaption');
 
-    // ১. লাইটবক্স লজিক
     if (lightboxModal) {
         allDynamicCards.forEach(card => {
             card.addEventListener('click', (e) => {
                 e.preventDefault(); 
                 const titleElement = card.querySelector('.project-title');
-                const thumbnailImg = card.querySelector('img');
                 const mediaType = card.getAttribute('data-media-type') || 'image'; 
-                const mediaUrl = card.getAttribute('data-media-url') || (thumbnailImg ? thumbnailImg.src : '');
+                const mediaUrl = card.getAttribute('data-media-url');
 
                 lightboxImg.style.display = 'none';
                 lightboxVideo.style.display = 'none';
@@ -113,7 +139,6 @@ function attachDynamicLightbox() {
         });
     }
 
-    // ২. পারফেক্ট ফিল্টার লজিক
     function applyDynamicFilters(tabSelector, gridSelector) {
         const tabs = document.querySelectorAll(tabSelector);
         
@@ -126,10 +151,9 @@ function attachDynamicLightbox() {
                 const cards = document.querySelectorAll(gridSelector);
 
                 cards.forEach(card => {
-                    const rawCat = card.getAttribute('data-category');
-                    const mappedCat = card.getAttribute('data-category-name');
+                    const cardCat = card.getAttribute('data-category'); 
                     
-                    if (filterValue === 'all' || rawCat === filterValue || mappedCat === filterValue) {
+                    if (filterValue === 'all' || cardCat === filterValue) {
                         card.style.display = 'block';
                         card.style.animation = 'none';
                         card.offsetHeight; 
@@ -147,5 +171,4 @@ function attachDynamicLightbox() {
     applyDynamicFilters('#graphic-tabs .tab-btn', '#graphic-grid .project-card');
 }
 
-// পেজ লোড হওয়ার সাথে সাথে Sanity থেকে ডেটা আনবে
 document.addEventListener('DOMContentLoaded', loadPortfolioFromSanity);
