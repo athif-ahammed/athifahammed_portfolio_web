@@ -4,8 +4,7 @@
 const SANITY_PROJECT_ID = 'xn2562m4'; 
 const SANITY_DATASET = 'production';
 
-// নতুন কোয়েরি: "mainImageUrl" অ্যাড করা হয়েছে
-const SANITY_QUERY = encodeURIComponent('*[_type == "portfolio"] | order(_createdAt desc) {title, clientName, serviceType, category, "categoryRefName": category->title, mediaType, mediaUrl, "imageUrl": thumbnail.asset->url, "mainImageUrl": mainImage.asset->url}');
+const SANITY_QUERY = encodeURIComponent('*[_type == "portfolio"] | order(_createdAt desc) {title, clientName, serviceType, category, "categoryRefName": category->title, mediaType, mediaUrl, "pdfUrl": pdfFile.asset->url, "imageUrl": thumbnail.asset->url, "mainImageUrl": mainImage.asset->url}');
 const SANITY_API_URL = `https://${SANITY_PROJECT_ID}.api.sanity.io/v2022-03-07/data/query/${SANITY_DATASET}?query=${SANITY_QUERY}`;
 
 async function loadPortfolioFromSanity() {
@@ -59,8 +58,15 @@ async function loadPortfolioFromSanity() {
                 if (project.serviceType === 'motion-graphics') motionCats.add(categoryName);
                 if (project.serviceType === 'graphic-design') graphicCats.add(categoryName);
 
-                // লজিক: মেইন ইমেজ থাকলে সেটা দেখাবে, না থাকলে লিংকের ডেটা, সেটাও না থাকলে থাম্বনেইল
-                const finalMediaUrl = project.mainImageUrl || project.mediaUrl || project.imageUrl;
+                // 🌟 Smart URL Logic: PDF-এর জন্য লিংক বা আপলোড করা ফাইল—যেটা পাবে সেটাই নিবে
+                let finalMediaUrl = project.imageUrl; 
+                if (project.mediaType === 'pdf') {
+                    finalMediaUrl = project.pdfUrl || project.mediaUrl;
+                } else if (project.mediaType === 'image') {
+                    finalMediaUrl = project.mainImageUrl || project.imageUrl;
+                } else {
+                    finalMediaUrl = project.mediaUrl || project.imageUrl;
+                }
 
                 const cardHTML = `
                     <a class="project-card ${cardClass}" href="#" data-category="${categoryName}" data-media-type="${project.mediaType}" data-media-url="${finalMediaUrl}">
@@ -127,7 +133,8 @@ function attachDynamicLightbox() {
                     lightboxVideo.play(); 
                 } else if (mediaType === 'pdf') {
                     lightboxIframe.style.display = 'block';
-                    lightboxIframe.src = mediaUrl + "#toolbar=0&navpanes=0";
+                    // 🌟 Zoom Fix: #view=FitH দিয়ে স্ক্রিনের সাথে ফিট করা হলো এবং জুম কন্ট্রোল অন রাখা হলো
+                    lightboxIframe.src = mediaUrl + "#view=FitH";
                 } else {
                     lightboxImg.style.display = 'block';
                     lightboxImg.src = mediaUrl;
